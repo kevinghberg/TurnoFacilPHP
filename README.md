@@ -1,2 +1,2 @@
-# scrum-loberia-2022
+# Scrum
 Proyecto para la materia Metodologías de Desarrollo de Software de TUDAI
