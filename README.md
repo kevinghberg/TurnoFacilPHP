@@ -1,6 +1,9 @@
 # Scrum
 Proyecto para la materia Metodologías de Desarrollo de Software de TUDAI
 
+## Nombre de ramas: utilizar el numero de la incidencia
+Por ejemplo: MYS-60
+
 ## Definition of Done
 - Verificar que las user stories cumplen el criterio de aceptación. 
 - Adjuntar documentación en casos posibles.
