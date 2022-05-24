@@ -12,7 +12,6 @@ Proyecto para la materia Metodologías de Desarrollo de Software de TUDAI
 ## Requerimientos
 - Adentro de la carpeta htdocs hacer:
 - git clone https://github.com/sierragustavo/scrum-loberia-2022.git
-Instalar smarty desde [acá](https://github.com/sierragustavo/scrum-loberia-2022.git)
 
 <details><summary>
   
