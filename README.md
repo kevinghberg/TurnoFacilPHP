@@ -10,9 +10,9 @@ Proyecto para la materia Metodologías de Desarrollo de Software de TUDAI
 - Todos los commits realizados desde git deben estar asociados a los ID de las tarjetas de JIRA.
 
 ## Requerimientos
-Adentro de la carpeta htdocs hacer:
-    git clone https://github.com/sierragustavo/scrum-loberia-2022.git
-- Instalar smarty desde [acá](https://github.com/sierragustavo/scrum-loberia-2022.git)
+- Adentro de la carpeta htdocs hacer:
+- git clone https://github.com/sierragustavo/scrum-loberia-2022.git
+Instalar smarty desde [acá](https://github.com/sierragustavo/scrum-loberia-2022.git)
 
 <details><summary>
   
