@@ -1,17 +1,26 @@
 <?php
 
-include_once('views/SecretariaView.php');
+include_once './views/View.php';
 include_once('models/ModelSecretaria.php');
+include_once('views/SecretariaView.php');
+
+class ControllerSecretaria extends Controller{
+
+    public function __construct()
+    {
+        $this->model = new  ModelSecretaria();
+        $this->view = new   SecretariaView();
+    }
 
 
-class ModelSecretaria
-{
-    private $model;
-    private $view;
+    public function showLogin()
+    {
+        //$logged = $this->CheckLoggedIn();
+        $this->view->showLogin();
+    }
 
-    
 
- public function verify()
+    public function verify()
     {
         if (!empty($_POST['usernameLogin']) && !empty($_POST['passwordLogin'])) {
             $user = $_POST['usernameLogin'];
@@ -30,30 +39,12 @@ class ModelSecretaria
     }
 
 
-    private function CheckLoggedIn(){
-        
-        if(!isset($_SESSION["admin"])){
-            $logged = "false";
-        } elseif ($_SESSION["admin"] == 1){
-            $logged = "admin";
-        } else {
-            $logged = "user";
-        }
-        return $logged;
-    }
-
-
     public function logout()
     {
         AuthHelper::logout();
         header("Location: " . BASE_URL . 'login');
     }
 
-    public function showLogin()
-    {
-        $logged = $this->CheckLoggedIn();
-        $this->view->showLogin($logged);
-    }
 
 
 

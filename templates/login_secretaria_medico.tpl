@@ -13,6 +13,6 @@
                 <input type="password" class="form-control" name="passwordLogin">
 
                 <input type="submit" value="INGRESAR">
-                <a>{$mensaje}</a>
+               
             </form>
 </div>
