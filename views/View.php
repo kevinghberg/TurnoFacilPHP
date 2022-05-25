@@ -33,4 +33,8 @@ class View
         return $username;
     }
 
+    public function RenderTurnos(){
+        $this->smarty->display("templates/turnos.tpl")
+
+    }
 }
