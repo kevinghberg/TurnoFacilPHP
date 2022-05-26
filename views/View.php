@@ -27,10 +27,9 @@ class View
         return $this->smarty;
     }
 
-    public function getUsername()
-    {
-        $username = $this->authhelper->getLoggedUserName();
-        return $username;
-    }
 
+    public function RenderTurnos(){
+        $this->smarty->display("templates/turnos.tpl");
+    
+        }
 }
