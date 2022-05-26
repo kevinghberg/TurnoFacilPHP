@@ -10,7 +10,7 @@ if (empty($_GET["action"])) {
 $urlParts = explode('/', $_GET['action']);
 
 $Controller = new Controller();
-$urlParts = explode('/', $_GET['action']);
+
 
 switch($urlParts[0]){
 

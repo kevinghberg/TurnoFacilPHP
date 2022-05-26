@@ -33,4 +33,4 @@ class View
         $this->smarty->display("templates/turnos.tpl");
     
         }
-}
+}   
