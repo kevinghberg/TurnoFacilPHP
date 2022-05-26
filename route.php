@@ -8,10 +8,11 @@ if (empty($_GET["action"])) {
 }
 
 $Controller = new Controller();
+$urlParts = explode('/', $_GET['action']);
 
 switch($urlParts[0]){
 
-	case 'infoTurnos':
+	case 'infoturnos':
 		$Controller->infoTurnos();
 		break;
 }
