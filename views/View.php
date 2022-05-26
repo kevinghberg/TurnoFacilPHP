@@ -1,7 +1,7 @@
 <?php
 
 require_once('libs/smarty/libs/Smarty.class.php');
-require_once('./helper/AuthHelper.php');
+require_once('helper/AuthHelper.php');
 
 class View
 {
