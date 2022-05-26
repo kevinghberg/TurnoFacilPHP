@@ -7,6 +7,8 @@ if (empty($_GET["action"])) {
 	$_GET["action"] = "home";
 }
 
+$urlParts = explode('/', $_GET['action']);
+
 $Controller = new Controller();
 
 switch($urlParts[0]){

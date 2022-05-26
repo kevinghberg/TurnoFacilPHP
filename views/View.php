@@ -1,7 +1,7 @@
 <?php
 
 require_once('libs/smarty/libs/Smarty.class.php');
-require_once('./helpers/AuthHelper.php');
+require_once('./helper/AuthHelper.php');
 
 class View
 {
@@ -29,6 +29,7 @@ class View
 
 
     public function RenderTurnos(){
+        
         $this->smarty->display("templates/turnos.tpl");
     
         }
