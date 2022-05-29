@@ -8,3 +8,10 @@ if (empty($_GET["action"])) {
 }
 
 $Controller = new Controller();
+
+switch($urlParts[0]){
+
+	case 'SacarTurno': 
+		$Controller->mostrarSacarTurno();
+	 break;
+}

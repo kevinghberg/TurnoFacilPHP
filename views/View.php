@@ -33,4 +33,8 @@ class View
         return $username;
     }
 
+    public function sacarTurno(){
+        $this->getSmarty()->assign('title','Sacar Turno');
+         $this->getSmarty()->display('templates/sacarTurno.tpl');
+    }
 }

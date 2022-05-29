@@ -11,4 +11,8 @@ class Controller
         $this->view = new View();
     }
 
+     public function mostrarSacarTurno()
+     {
+         $this->view->sacarTurno();
+     }
 }
