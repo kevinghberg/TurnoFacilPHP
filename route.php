@@ -17,5 +17,15 @@ switch($urlParts[0]){
 	case 'infoturnos':
 		$Controller->infoTurnos();
 		break;
+	case 'elegirTurno':
+		$ControllerTurnos->elegirTurno();
+		break;
+	case 'turnos':
+		$ControllerTurnos->getTurnos();
+		break;
+	case 'filtrarTurno':
+		$ControllerTurnos->filtrarTurno();
+		break;
+	
 }
 

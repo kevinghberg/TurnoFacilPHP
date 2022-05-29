@@ -15,10 +15,13 @@
             <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
+          <a class="nav-link" href="#">CONTACTO</a>
+        </li>
+          <li class="nav-item">
             <a class="nav-link" href="#">TURNOS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">CONTACTO</a>
+            <a class="nav-link" href="#">INGRESAR</a>
           </li>
 
         </ul>
@@ -27,7 +30,7 @@
 
 
         <div class="container d-flex justify-content-center mt-5">
-          <a href="">  <img src="bea8c8bfd99232680106da7d20a8731c.png" class="img-fluid" alt="Responsive image"> </a>
+          <a href="">  <img src="imagenes\bea8c8bfd99232680106da7d20a8731c.png" class="img-fluid" alt="Responsive image"> </a>
         </div>
 
         <div class="container-sm border border-secondary mt-5 rounded" style="width: 1000px ; height: 350px;" >
@@ -38,8 +41,29 @@
 
           <div class="container d-flex justify-content-center">
 
+         <!-- Filtro turnos -->
+         {if $logged eq 'paciente'}
+            <div class="row justify-content-center ">
+  
+              <form action="filtrarTurno" method="POST">
+  
+                  <input type="text" name="inputDia" placeholder="Dia" class="shadow p-1  mx-1 my-1 bg-white rounded">
+                  <input type="text" name="inputHorario" placeholder="Horario" class="shadow p-1 mx-1 my-1 bg-white rounded">
+                  <select name="inputMedico">
+                  {foreach from=$medicos item=medico}
+                      <option value={$medico->nombre}>{$medico->apellido}</option>
+                  {/foreach}
+                  <button type="submit"> FILTRAR</button>
+  
+              </form>
+  
+           </div>
+  
+         
+<!-- Filtro turnos -->
             <table class="table text-center" style="width: 700px;">
               <thead>
+
                 <tr>
                   <th class="bg-success text-white" scope="col">DIA</th>
                   <th class="bg-success text-white" scope="col">HORARIO</th>
@@ -50,38 +74,29 @@
                 </tr>
               </thead>
               <tbody>
+
+              {{foreach from=$turnos item=turno}
+
                 <tr>
                 
-                  <td>LUNES</td>
-                  <td>10:00</td>
-                  <td>27/3</td>
-                  <td> <button type="button" class="btn btn-primary">ELEGIR</button> </td>
+                  <td>{$turno->dia}</td>
+                  <td>{$turno->hora}</td>
+                  <td>{$turno->fecha}</td>
+
+                {if $logged eq 'admin'}   <td> <button> <a href="elegirTurno/{$turno->id_turno}"> Elegir</a> </button> </td>{/if}
                   
                 </tr>
-                <tr class="">
-                 
-                  <td>MIERCOLES</td>
-                  <td>13:00</td>
-                  <td>1/4</td>
-                  <td>  <button type="button" class="btn btn-primary">ELEGIR</button> </td>
-                </tr>
-                
-                <tr >
-                 
-                  <td>SABADO</td> 
-                  <td>17:30</td>
-                  <td>12/4</td>
-                  <td>  <button type="button" class="btn btn-primary">ELEGIR</button> </td>
-                </tr>
-                
+
+              {/foreach}}
+                   
               </tbody>
             </table>
 
           </div>
          
-
+        
         </div>
-
+      {/if} 
         
 
         <footer class="bg-success text-center text-white position-absolute bottom-0" style="width:100%;">
