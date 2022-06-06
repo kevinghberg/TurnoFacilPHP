@@ -27,16 +27,16 @@ class ControllerSecretaria extends Controller{
             $pass = $_POST['passwordLogin'];
             $userDb = $this->model->getUserByUsername($user);
 
-            if (!empty($userDb) && password_verify($pass, $userDb->password)) {
-                AuthHelper::login($userDb);
-                $_SESSION["admin"] = $userDb->admin;
-                header('Location: ' . BASE_URL . "index");
+            if (!empty($userDb) && $pass === $userDb->contraseña) {
+               // AuthHelper::login($userDb);
+                //_SESSION["admin"] = $userDb->admin;
+                //header('Location: ' . BASE_URL . "index");
             } else
                 $this->view->showLogin("Login incorrecto, password o usuario incorrecto");
-        } else {
+        }else {
             $this->view->showLogin("Login incompleto");
         }
-    }
+   }
 
 
     public function logout()

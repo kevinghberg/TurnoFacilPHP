@@ -11,6 +11,4 @@ class SecretariaView extends View {
         $this->getSmarty()->display('templates/login_secretaria_medico.tpl');
     }
 
-
-
 }

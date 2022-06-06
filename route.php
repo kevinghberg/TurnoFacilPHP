@@ -8,15 +8,20 @@ if (empty($_GET["action"])) {
 	$_GET["action"] = "home";
 }
 
+$urlParts = explode('/', $_GET['action']);
+
+
 $Controller = new Controller();
 $ControllerSecretaria = new ControllerSecretaria();
 
 
 
 
-//switch ($urlParts[0]) {
-    
-  //  case 'login':
+switch ($urlParts[0]) {
+   case 'login':
         $ControllerSecretaria->showLogin();
-    //    break;
-//}
+       break;
+   case 'verifyUser':
+         $ControllerSecretaria->verify();
+         break;
+}
