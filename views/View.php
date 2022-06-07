@@ -1,7 +1,7 @@
 <?php
 
 require_once('libs/smarty/libs/Smarty.class.php');
-require_once('./helpers/AuthHelper.php');
+require_once('helper/AuthHelper.php');
 
 class View
 {
@@ -29,7 +29,23 @@ class View
 
 
     public function RenderTurnos(){
+        
         $this->smarty->display("templates/turnos.tpl");
     
         }
-}
+
+    public function renderCancelarTurnos($turnos)
+    {
+        $this->smarty->assign('turnos',$turnos);
+        $this->smarty->display("templates/cancelar_turnos.tpl");
+    }
+    public function renderListarMedicos($listamedicos){
+        $this->smarty->assign('listamedicos',$listamedicos);
+        $this->smarty->display("templates/turnos_por_medico.tpl");
+    }
+
+    public function renderDetallesTurno($turno){
+        $this->smarty->assign('turno',$turno);
+        $this->smarty->display("templates/administrar_turnos.tpl");
+    }
+}   
