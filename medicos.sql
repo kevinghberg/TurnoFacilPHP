@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-06-2022 a las 00:39:18
+-- Tiempo de generación: 07-06-2022 a las 03:04:35
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 8.0.3
 
@@ -38,8 +38,8 @@ CREATE TABLE `medicos` (
 --
 
 INSERT INTO `medicos` (`id_medico`, `usuario`, `contraseña`) VALUES
-(2, 'carlos', '123asd'),
-(3, 'nicolas', '123asd');
+(2, 'carlos', 'pepelo123'),
+(1, 'nicolas', '123asd');
 
 --
 -- Índices para tablas volcadas
@@ -49,7 +49,7 @@ INSERT INTO `medicos` (`id_medico`, `usuario`, `contraseña`) VALUES
 -- Indices de la tabla `medicos`
 --
 ALTER TABLE `medicos`
-  ADD PRIMARY KEY (`id_medico`);
+  ADD PRIMARY KEY (`usuario`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

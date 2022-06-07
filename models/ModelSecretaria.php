@@ -8,7 +8,7 @@ class ModelSecretaria extends Model{
     private $model;
     private $view;
 
-    
+
 
     public function     getUserByUsername($username) {
         $query = $this->getDb()->prepare('SELECT * FROM `medicos` WHERE usuario = ?');
@@ -16,11 +16,12 @@ class ModelSecretaria extends Model{
         return $query->fetch(PDO::FETCH_OBJ);
     }
  
-    public function getUsers(){
+   
 
-        $query = $this->getDb()->prepare('SELECT * FROM usuario');
-        $query->execute();
-        return $query->fetchAll(PDO::FETCH_OBJ);
+    public function getTurnos($turnos){
+        $sentencia = $this->getDb()->prepare("SELECT * FROM turnos ");
+        $sentencia->execute(array(($turnos)));
+        return $sentencia->fetch(PDO::FETCH_OBJ);
     }
 
 

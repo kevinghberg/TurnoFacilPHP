@@ -15,10 +15,8 @@ class ControllerSecretaria extends Controller{
 
     public function showLogin()
     {
-        //$logged = $this->CheckLoggedIn();
-        $this->view->showLogin();
+        $this->view->showLogin(" ");
     }
-
 
     public function verify()
     {
@@ -26,26 +24,14 @@ class ControllerSecretaria extends Controller{
             $user = $_POST['usernameLogin'];
             $pass = $_POST['passwordLogin'];
             $userDb = $this->model->getUserByUsername($user);
-
             if (!empty($userDb) && $pass === $userDb->contraseña) {
-               // AuthHelper::login($userDb);
-                //_SESSION["admin"] = $userDb->admin;
-                //header('Location: ' . BASE_URL . "index");
+              $turnos = $this->model->getTurnos($user);
+              $this->view->showTurnos($turnos);
             } else
                 $this->view->showLogin("Login incorrecto, password o usuario incorrecto");
         }else {
             $this->view->showLogin("Login incompleto");
         }
    }
-
-
-    public function logout()
-    {
-        AuthHelper::logout();
-        header("Location: " . BASE_URL . 'login');
-    }
-
-
-
 
 }
