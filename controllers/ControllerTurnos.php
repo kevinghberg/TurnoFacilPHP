@@ -3,6 +3,7 @@
 include_once './controllers/Controller.php';
 include_once './models/ModelTurnos.php';
 include_once './models/ModelMedico.php';
+include_once './views/TurnosView.php';
 
 
 class ControllerTurnos extends Controller
@@ -14,22 +15,25 @@ class ControllerTurnos extends Controller
     {
         $this->model = new ModelTurnos();
         $this->modelMedico = new ModelMedico();
+        $this->view = new TurnosView();
     }
 
 
     function getTurnos()
     {
-        AuthHelper::checkLoggedIn();
-        
+       
         $turnos = $this->model->getTurnos();
-        $this->view->ViewTurnos($turnos);
+        $medico = $this->modelMedico->getMedicos();
+        
+        $this->view->ViewTurnos($turnos,$medico);
+       
+
     }
 
-    function elegirTurno()
+    function elegirTurno($id_turno)
     {
 
-        AuthHelper::checkLoggedIn();
-        $this->model->elegirTurno();
+        $this->model->elegirTurno($id_turno);
         header("Location: " . BASE_URL . 'turnos');
     }
 
@@ -38,10 +42,11 @@ class ControllerTurnos extends Controller
         $diaTurno= $_POST['inputDia'];
         $horaTurno= $_POST['inputHorario'];
         $medicoTurno= $_POST['inputMedico'];
-        
-        $turno = $this->modelTurnos->getTurnos($diaTurno,$horaTurno);
-        $medico = $this->modelMedico->getMedicos($medicoTurno);
 
-        $this->view->ViewTurnosFiltrados($turno, $medico);
+        $turno = $this->model->getTurnosPorFecha($diaTurno,$horaTurno);
+
+        $mTurno = $this->modelMedico->getMedico($medicoTurno);
+
+        $this->view->ViewTurnosFiltrados($turno,$mTurno);
     }
 }

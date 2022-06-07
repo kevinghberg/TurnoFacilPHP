@@ -11,8 +11,5 @@ class Controller
         $this->view = new View();
     }
 
-    function infoTurnos(){
-        $this->view->RenderTurnos();
-    }
 
 }
