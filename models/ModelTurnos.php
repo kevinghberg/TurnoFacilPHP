@@ -16,7 +16,7 @@ class ModelTurnos extends ModelDB {
     }
 
     function getTurnosPorFecha($diaTurno,$horaTurno){
-        $sentencia = $this->getDB()->prepare( "SELECT dia,hora,medico.id_medico,medico.nombre,medico.apellido,disponible FROM turno 
+        $sentencia = $this->getDB()->prepare( "SELECT dia,hora,medico.id_medico,medico.nombre_medico,disponible FROM turno 
                                                                          JOIN medico ON turno.id_medico = medico.id_medico
                                                                          WHERE dia=? AND hora=?"); 
         $sentencia->execute([$diaTurno,$horaTurno]);

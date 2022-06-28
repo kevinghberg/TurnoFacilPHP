@@ -50,13 +50,15 @@
   
               <form action="filtrarTurno" method="POST">
   
+                 
                   <input type="text" name="inputDia" placeholder="Dia" class="shadow p-1  mx-1 my-1 bg-white rounded">
-                  <input type="text" name="inputHorario" placeholder="Horario" class="shadow p-1 mx-1 my-1 bg-white rounded">
+                  <input type="text" name="inputHorario" placeholder="Hora" class="shadow p-1  mx-1 my-1 bg-white rounded">
+                 
                 
          <select name="inputMedico">
 
          {foreach from=$medico item=m}
-          <option value="{$m->id_medico}">{$m->nombre} {$m->apellido}</option>
+          <option value="{$m->id_medico}">{$m->nombre_medico}</option>
          {/foreach}
 
         </select>
@@ -74,7 +76,7 @@
 
                 <tr>
                   <th class="bg-success text-white" scope="col">DIA</th>
-                  <th class="bg-success text-white" scope="col">HORARIO</th> 
+                  <th class="bg-success text-white" scope="col">HORA</th>
                   <th class="bg-success text-white" scope="col">MEDICO</th>
                   <th class="bg-success text-white" scope="col">ELEGIR</th>
                 
@@ -87,12 +89,11 @@
                 
                 <tr>
  
-                  <td>{$turno->dia}</td>
-                  <td>{$turno->hora}</td>
-                  <td> {$turno->nombre} {$turno->apellido}</td>
+                  <td>{$turno->dia}</td>      
+                  <td>{$turno->hora}</td>           
+                  <td> {$turno->nombre_medico}</td>
+              
 
-                
-                
                   {if $turno->disponible == 1}
 
                     <td>
