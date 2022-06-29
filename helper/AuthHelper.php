@@ -16,8 +16,7 @@ Class AuthHelper
     static public function login($user) {
         self::start();
         $_SESSION['IS_LOGGED'] = true;
-        $_SESSION['ID_USER'] = $user->id;
-        $_SESSION['USERNAME'] = $user->username;
+        $_SESSION['USERNAME'] = $user->dni;
     }
 
     public static function logout() {

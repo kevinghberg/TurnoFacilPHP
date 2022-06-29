@@ -14,10 +14,8 @@ class TurnosView extends View{
         $this->getSmarty()->display("templates/turnos.tpl");
     }
     
-    function showMisTurnos($turnosPaciente,$paciente,$logged){
+    function showMisTurnos($turnosPaciente){
         $this->getSmarty()->assign('turnosPaciente', $turnosPaciente);
-        $this->getSmarty()->assign('paciente', $paciente);
-        $this->getSmarty()->assign('logged', $logged);
         $this->getSmarty()->display("templates/misturnos.tpl");
     }
 }
