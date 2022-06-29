@@ -3,6 +3,7 @@
 include_once './controllers/Controller.php';
 include_once './models/ModelTurnos.php';
 include_once './models/ModelMedico.php';
+include_once './models/ModelPaciente.php';
 include_once './views/TurnosView.php';
 
 
@@ -16,6 +17,7 @@ class ControllerTurnos extends Controller
         $this->model = new ModelTurnos();
         $this->modelMedico = new ModelMedico();
         $this->view = new TurnosView();
+        $this->modelPaciente = new ModelPaciente();
     }
 
 
@@ -49,4 +51,33 @@ class ControllerTurnos extends Controller
 
         $this->view->ViewTurnosFiltrados($turno,$mTurno);
     }
+
+    function showMisTurnos($dni){
+        
+    
+        $turnosPaciente = $this->modelPaciente->getTurnosByDNI($dni);
+
+        $paciente = $this->modelPaciente->getPacienteByDNI($dni);
+
+        $logged = $this->CheckLoggedIn();
+
+        $this->view->showMisTurnos($turnosPaciente,$paciente,$logged);
+    }
+
+    
+
+
+    function CheckLoggedIn()
+    {
+
+        if (!isset($_SESSION["admin"])) {
+            $logged = "false";
+        } elseif ($_SESSION["admin"] == 1) {
+            $logged = "admin";
+        } else {
+            $logged = "user";
+        }
+        return $logged;
+    }
 }
+

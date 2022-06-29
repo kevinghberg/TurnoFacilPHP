@@ -25,6 +25,10 @@ switch($urlParts[0]){
 	case 'filtrarTurno':
 		$ControllerTurnos->filtrarTurno();
 		break;
+	case 'misturnos':
+		$ControllerTurnos->showMisTurnos($urlParts[1]);
+		break;
+
 	
 }
 
