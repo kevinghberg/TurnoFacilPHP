@@ -2,6 +2,7 @@
 
 include_once './views/View.php';
 
+
 class Controller
 {
     private $view;
@@ -9,6 +10,7 @@ class Controller
     function __construct()
     {
         $this->view = new View();
+
     }
 
 

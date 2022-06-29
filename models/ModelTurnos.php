@@ -30,6 +30,13 @@ class ModelTurnos extends ModelDB {
     return $sentencia->fetch(PDO::PARAM_BOOL);
     }
 
+    function cancelarTurno($id_turno){
+        $sentencia = $this->getDB()->prepare("UPDATE turno SET disponible=1 WHERE id_turno=?");
+        $sentencia->execute([$id_turno]);
+        return $sentencia->fetch(PDO::PARAM_BOOL);
+
+    }
+
 
 }
 

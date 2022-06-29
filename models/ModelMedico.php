@@ -15,4 +15,12 @@ class ModelMedico extends ModelDB{
         $sentencia->execute([$medico]);
         return $sentencia->fetchAll(PDO::FETCH_OBJ);
     }
+
+    function getTurnosMedico(){
+        $sentencia = $this->getDB()->prepare("SELECT dia,hora FROM turno t JOIN medico m on t.id_medico = m.id_medico WHERE username=? ");
+        $sentencia->execute([]);
+        return $sentencia->fetchAll(PDO::FETCH_OBJ);
+    }
+
+
 }

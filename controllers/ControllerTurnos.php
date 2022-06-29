@@ -17,6 +17,7 @@ class ControllerTurnos extends Controller
         $this->modelMedico = new ModelMedico();
         $this->view = new TurnosView();
         $this->modelPaciente = new ModelPaciente();
+        $this->viewPaciente = new PacienteView();
     }
 
 
@@ -49,13 +50,23 @@ class ControllerTurnos extends Controller
         $this->view->ViewTurnosFiltrados($turno, $mTurno);
     }
 
-    function showMisTurnos()
+ 
+    function cancelarTurno($id_turno){
+        $this->model->cancelarTurno($id_turno);
+        header("Location: " . BASE_URL . 'turnos');
+    }
+
+
+    // MAS ADELANTE ///
+   function showMisTurnos()
+
     {
-        if (isset($_SESSION['USERNAME'])) {
-            $turnosPaciente = $this->modelPaciente->getTurnosByDNI($_SESSION["USERNAME"]);
-            $this->view->showMisTurnos($turnosPaciente);
-        }
-        header('Location: ' . BASE_URL . "loggin_secretaria_medico");
-        die;
+        $dni = AuthHelper::getLoggedUserName();
+        $turnosPaciente = $this->modelPaciente->getTurnosByDNI($dni);
+        $this->viewPaciente->showPortalPaciente($turnosPaciente);
+    }
+
+    function getTurnosMedico()
+    {
     }
 }
