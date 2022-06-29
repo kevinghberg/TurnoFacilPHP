@@ -42,9 +42,8 @@ CREATE TABLE `turnos` (
 
 INSERT INTO `turnos` (`id_turno`, `usuario`, `id_paciente`, `fecha`, `ocupado`, `disponible`) VALUES
 (1, 'nicolas', NULL, '2022-06-02', 1, 1),
-(2, 'nicolas', NULL, '2022-06-02', 1, 0),
-(4, 'carlos', NULL, '2022-06-18', 1, 0);
-
+(2, 'nicolas', NULL, '2022-08-02', 1, 0),
+(3, 'nicolas', NULL, '2022-07-02', 1, 1),
 --
 -- Índices para tablas volcadas
 --

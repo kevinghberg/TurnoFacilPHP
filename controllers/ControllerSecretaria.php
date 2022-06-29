@@ -25,7 +25,7 @@ class ControllerSecretaria extends Controller{
             $pass = $_POST['passwordLogin'];
             $userDb = $this->model->getUserByUsername($user);
             if (!empty($userDb) && $pass === $userDb->contraseña) {
-              $turnos = $this->model->getTurnos($user);
+              $turnos = $this->model->getTurnos();
               $this->view->showTurnos($turnos);
             } else
                 $this->view->showLogin("Login incorrecto, password o usuario incorrecto");
