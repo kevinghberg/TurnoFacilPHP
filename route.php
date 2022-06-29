@@ -1,18 +1,32 @@
 <?php
-require_once('controllers/Controller.php');
+require_once('controllers/paciente.controller.php');
 
+// base url
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
-if (empty($_GET["action"])) {
-	$_GET["action"] = "home";
+// define una acción por defecto
+if (empty($_GET['action'])) {
+	$_GET['action'] = 'home';
 }
 
-$Controller = new Controller();
+// toma la acción que viene del usuario y parsea los parámetros
+$accion = $_GET['action'];
+$parametros = explode('/', $accion);
 
-switch($urlParts[0]){
+$PacienteController = new PacienteController();
 
-	case 'infoTurnos':
-		$Controller->infoTurnos();
+// TABLA DE RUTEO
+switch ($parametros[0]) {
+	case 'mostrarMedicos':
+		$PacienteController->mostrarMedicos();
+		break;
+	case 'filtrarEspecialidad':
+		$PacienteController->mostrarMedicosPorEspecialidad();
+		break;
+	case 'filtrarObraSocial':
+		$PacienteController->mostrarMedicosPorObra();
+		break;
+	default:
+		echo "404";
 		break;
 }
-

@@ -1,7 +1,7 @@
 <?php
 
 require_once('libs/smarty/libs/Smarty.class.php');
-require_once('./helpers/AuthHelper.php');
+require_once('./helper/AuthHelper.php');
 
 class View
 {
@@ -11,14 +11,15 @@ class View
     public function __construct()
     {
         $this->smarty = new Smarty();
-        $this->smarty->assign('base_url', BASE_URL);
+        $this->smarty->assign('url', BASE_URL);
         $this->authhelper = new AuthHelper();
 
         //EJEMPLO PARA OBTENER UNA VARIABLE LLAMANDO UNA FUNCIÓN
         //$username = $this->authhelper->getLoggedUserName();
     }
 
-    public function render404(){
+    public function render404()
+    {
         $this->getSmarty()->display('templates/404.tpl');
     }
 
@@ -27,9 +28,4 @@ class View
         return $this->smarty;
     }
 
-
-    public function RenderTurnos(){
-        $this->smarty->display("templates/turnos.tpl");
-    
-        }
 }
