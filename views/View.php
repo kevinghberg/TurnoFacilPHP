@@ -7,14 +7,14 @@ class View
 {
     private $smarty;
     private $authhelper;
-    
+
 
     public function __construct()
     {
         $this->smarty = new Smarty();
         $this->smarty->assign('base_url', BASE_URL);
         $this->authhelper = new AuthHelper();
-        
+
         $username = $this->authhelper->getLoggedUserName();
         $this->smarty->assign('username', $username);
 
@@ -22,7 +22,8 @@ class View
         //$username = $this->authhelper->getLoggedUserName();
     }
 
-    public function render404(){
+    public function render404()
+    {
         $this->getSmarty()->display('templates/404.tpl');
     }
 
@@ -32,12 +33,11 @@ class View
     }
     public function getUsername()
     {
-        $username = $this->authHelper->getLoggedUserName();
-
-        return $username;   
+        $username = $this->authhelper->getLoggedUserName();
+        return $username;
     }
-
-
-
-
-}   
+    public function showLoginPersonal()
+    {
+        $this->getSmarty()->display("templates/ingresoPersonal.tpl");
+    }
+}

@@ -33,7 +33,8 @@ class ControllerTurnos extends Controller
     function elegirTurno($id_turno)
     {
 
-        $this->model->elegirTurno($id_turno);
+        $yo = $_SESSION['USERNAME'];
+        $this->model->elegirTurno($yo, $id_turno);
         header("Location: " . BASE_URL . 'turnos');
     }
 
@@ -50,20 +51,23 @@ class ControllerTurnos extends Controller
         $this->view->ViewTurnosFiltrados($turno, $mTurno);
     }
 
- 
-    function cancelarTurno($id_turno){
+
+    function cancelarTurno($id_turno)
+    {
         $this->model->cancelarTurno($id_turno);
-        header("Location: " . BASE_URL . 'turnos');
+
+        header("Location: " . BASE_URL . 'turnospaciente');
     }
 
 
     // MAS ADELANTE ///
-   function showMisTurnos()
+
+    function showMisTurnos()
 
     {
         $dni = AuthHelper::getLoggedUserName();
         $turnosPaciente = $this->modelPaciente->getTurnosByDNI($dni);
-        $this->viewPaciente->showPortalPaciente($turnosPaciente);
+        $this->viewPaciente->showTurnosPaciente($turnosPaciente);
     }
 
     function getTurnosMedico()

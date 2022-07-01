@@ -11,24 +11,21 @@
 
 
 
+    <ul class="list-group">
+    <li class="list-group-item"><a href=""> <img src="imagenes\lucas.png" class="img-fluid" alt="Responsive image">
+    </a></li>
+        <li class="list-group-item">Dr. Lucas Cipolletti</li>
+        <li class="list-group-item">Traumatologo</li>
+        <li class="list-group-item">Secretaria: Marisa</li>
+        <li class="list-group-item">Trabaja con: OSDE</li>
+    </ul>
+
     <div class="w-25 p-5 border border-secondary mt-5 rounded text-center mb-5 bg-success">
 
-        <a href="turnos" class="link-light">SACAR TURNO</a>
+        <a href="turnos" class="link-light">TURNOS</a>
 
     </div>
 
-
-    <div class="w-25 p-5 border border-secondary mt-5 rounded text-center  mb-5 bg-success">
-
-        <a href="turnospaciente" class="link-light">MIS TURNOS</a>
-
-    </div>
-
-    <div class="w-25 p-5 border border-secondary mt-5 rounded text-center  mb-5 bg-success">
-
-        <a href="medicos" class="link-light">VER MEDICOS</a>
-
-    </div>
 
 </div>
 
