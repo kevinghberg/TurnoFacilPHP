@@ -12,11 +12,8 @@ class SecretariaView extends View
         $this->getSmarty()->assign('username', $username);
     }
 
-
- 
-
-    public function showPortalSecretaria(){
+    public function showPortalSecretaria()
+    {
         $this->getSmarty()->display("templates/portalSecretaria.tpl");
     }
-    }
-
+}

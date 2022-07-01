@@ -3,7 +3,7 @@
 include_once "ModelDB.php";
 
 
-class ModelTurnos extends ModelDB
+class ModelTurno extends ModelDB
 {
 
 
@@ -19,7 +19,7 @@ class ModelTurnos extends ModelDB
 
     function getTurnosPorFecha($diaTurno, $horaTurno)
     {
-        $sentencia = $this->getDB()->prepare("SELECT dia,hora,medico.id_medico,medico.nombre_medico,disponible FROM turno 
+        $sentencia = $this->getDB()->prepare("SELECT fecha, medico.especialidad,medico.id_medico,medico.nombre_medico,disponible FROM turno 
                                                                          JOIN medico ON turno.id_medico = medico.id_medico
                                                                          WHERE dia=? AND hora=?");
         $sentencia->execute([$diaTurno, $horaTurno]);
@@ -30,7 +30,7 @@ class ModelTurnos extends ModelDB
     function getTurnosFiltrados($especialidadTurno, $obraSocialTurno)
     {
 
-        $sentencia = $this->getDB()->prepare("SELECT dia, horario, medico.id_medico, medico.nombre_medico, disponible , especialidad, nombre_largo
+        $sentencia = $this->getDB()->prepare("SELECT fecha, medico.id_medico, medico.nombre_medico, disponible , especialidad, nombre_largo
                                                 FROM turno JOIN medico ON turno.id_medico = medico.id_medico 
                                                            JOIN trabaja_con ON medico.id_medico = trabaja_con.id_medico
                                                            WHERE  medico.especialidad = ? AND trabaja_con.nombre_largo =? ");

@@ -20,7 +20,14 @@ class MedicoView extends View
         $this->getSmarty()->display('templates/medicos.tpl');
     }
 
-    public function showPortalMedico(){
+    public function showPortalMedico()
+    {
         $this->getSmarty()->display('templates/portalMedico.tpl');
+    }
+
+    public function showCronograma($turnos)
+    {
+        $this->getSmarty()->assign('turnos', $turnos);
+        $this->getSmarty()->display('templates/cronograma.tpl');
     }
 }

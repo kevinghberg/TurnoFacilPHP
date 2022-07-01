@@ -7,7 +7,7 @@ class ModelPaciente extends ModelDB
 
     function getTurnosByDNI($dni)
     {
-        $sentencia = $this->getDB()->prepare('SELECT dia,hora,nombre_medico,id_turno FROM turno t 
+        $sentencia = $this->getDB()->prepare('SELECT fecha,m.especialidad,nombre_medico,id_turno FROM turno t 
                                                                                      LEFT JOIN medico m ON t.id_medico = m.id_medico WHERE dni_paciente=?');
         $sentencia->execute(array($dni));
         return $sentencia->fetchAll(PDO::FETCH_OBJ);

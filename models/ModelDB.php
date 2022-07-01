@@ -17,7 +17,7 @@ class ModelDB
         $host = 'localhost';
         $userName = 'root';
         $password = '';
-        $database = 'turnofaciltpe';
+        $database = 'db_scrum';
 
         try {
             $db = new PDO("mysql:host=$host;dbname=$database;charset=utf8", $userName, $password);

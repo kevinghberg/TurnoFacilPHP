@@ -1,11 +1,5 @@
 {include file="header.tpl"}
 
-
-<div class="container d-flex justify-content-center">
-    <a href=""> <img src="imagenes\bea8c8bfd99232680106da7d20a8731c.png" class="img-fluid" alt="Responsive image">
-    </a>
-</div>
-
 <div class="container-sm border border-5border border-secondary mt-5 rounded d-flex justify-content-around align-items-center"
     style="width: 850px ; height: 500px;">
 

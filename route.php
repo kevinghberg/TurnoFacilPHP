@@ -26,15 +26,19 @@ switch ($urlParts[0]) {
   case 'turnos':
     $ControllerTurnos->getTurnos();
     break;
+
   case 'elegirturno':
     $ControllerTurnos->elegirTurno($urlParts[1]);
     break;
+
   case 'filtrarTurno':
     $ControllerTurnos->filtrarTurno();
     break;
+
   case 'turnosMedico':
     $ControllerTurnos->getTurnosMedico();
     break;
+
   case 'ingreso':
     $ControllerPaciente->getForm();
     break;
@@ -43,7 +47,7 @@ switch ($urlParts[0]) {
     $ControllerTurnos->showMisTurnos();
     break;
 
-  case 'cancelarTurno':
+  case 'cancelarturno':
     $ControllerTurnos->cancelarTurno($urlParts[1]);
     break;
 
@@ -55,16 +59,36 @@ switch ($urlParts[0]) {
     $ControllerPaciente->showPortalPaciente();
     break;
 
+  case 'portalmedico':
+    $ControllerMedico->showPortalMedico();
+    break;
+
+  case 'portalsecretaria':
+    $ControllerSecretaria->showPortalSecretaria();
+    break;
+
   case 'logear':
     $ControllerPaciente->logear();
     break;
 
+  case 'logearmedico':
+    $ControllerMedico->logearMedico();
+    break;
+
+  case 'logearsecretaria':
+    $ControllerSecretaria->logearSecretaria();
+    break;
+    
   case 'deslogear':
     $Controller->deslogear();
     break;
 
+  case 'cronograma':
+    $ControllerMedico->mostrarCronograma();
+    break;
+
   case 'medicos':
-    $ControllerMedico->verMedicos();
+    $ControllerPaciente->mostrarMedicos();
     break;
 
   case 'registro':
@@ -75,14 +99,11 @@ switch ($urlParts[0]) {
     $Controller->showLoginPersonal();
     break;
 
-  case 'logearmedico':
-    $ControllerMedico->logearMedico();
+  case 'filtrarEspecialidad':
+    $ControllerPaciente->mostrarMedicosPorEspecialidad();
     break;
 
-  case 'portalmedico':
-    $ControllerMedico->showPortalMedico();
+  case 'filtrarObraSocial':
+    $ControllerPaciente->mostrarMedicosPorObra();
     break;
-  
-  case 'portalsecretaria':
-    $ControllerSecretaria->showPortalSecretaria();
 }

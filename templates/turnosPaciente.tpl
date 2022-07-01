@@ -1,20 +1,9 @@
 {include file="header.tpl"}
 
 
-<div class="container d-flex justify-content-center mt-5 ">
-    <a href=""> <img src="imagenes\bea8c8bfd99232680106da7d20a8731c.png" class="img-fluid" alt="Responsive image">
-    </a>
-</div>
-
 <div class="container-sm border border-secondary mt-5 rounded  " style="width: 1000px ; height: 600px;">
 
-
-
-
-
-
     <!-- Filtro turnos -->
-
 
     <div class="d-flex justify-content-center">
 
@@ -29,12 +18,10 @@
             <thead>
 
                 <tr>
-                    <th class="bg-success text-white" scope="col">DIA</th>
-                    <th class="bg-success text-white" scope="col">HORA</th>
+                    <th class="bg-success text-white" scope="col">FECHA</th>
                     <th class="bg-success text-white" scope="col">MEDICO</th>
+                    <th class="bg-success text-white" scope="col">ESPECIALIDAD</th>
                     <th class="bg-success text-white" scope="col"></th>
-
-
                 </tr>
             </thead>
             <tbody>
@@ -42,14 +29,13 @@
 
                     <tr>
 
-
-                        <td> {$turnoP->dia} </td>
-                        <td> {$turnoP->hora} </td>
+                        <td> {$turnoP->fecha} </td>
                         <td> {$turnoP->nombre_medico} </td>
+                        <td> {$turnoP->especialidad} </td>
                         <td>
 
                             <button>
-                                <a href="{BASE_URL}cancelarTurno/{$turnoP->id_turno}"> Cancelar </a>
+                                <a href="{BASE_URL}cancelarturno/{$turnoP->id_turno}"> Cancelar </a>
                             </button>
 
                         </td>

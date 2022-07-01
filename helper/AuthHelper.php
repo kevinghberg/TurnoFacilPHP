@@ -15,8 +15,8 @@ Class AuthHelper
 
     static public function login($dni) {
         self::start();
-        $_SESSION['IS_LOGGED'] = true;
         $_SESSION['USERNAME'] = $dni;
+        $_SESSION['PACIENTE'] = true;
     }
 
     public static function logout() {
@@ -33,6 +33,18 @@ Class AuthHelper
         else{
             return true;
         }
+    }
+
+    public static function loginMedico($username){
+        self::start();
+        $_SESSION['USERNAME'] = $username;
+        $_SESSION['MEDICO'] = true;
+    }
+
+    public static function loginSecretaria($username){
+        self::start();
+        $_SESSION['USERNAME'] = $username;
+        $_SESSION['SECRETARIA'] = true;
     }
 
     public static function getLoggedUserName() {

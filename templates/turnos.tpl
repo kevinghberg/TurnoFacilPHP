@@ -1,61 +1,37 @@
 {include file="header.tpl"}
 
 
-
-
-<div class="container d-flex justify-content-center mt-5 ">
-  <a href=""> <img src="imagenes\bea8c8bfd99232680106da7d20a8731c.png" class="img-fluid" alt="Responsive image"> </a>
-</div>
-
 <div class="container-sm border border-secondary mt-5 rounded  " style="width: 1000px ; height: 600px;">
 
   <div class="text-center   ">
     <h1 class="mt-3">Turnos Disponibles</h1>
   </div>
 
-
-
-
-
-
-
-
   <div class=" d-flex justify-content-center">
     <table class="table text-center mt-5 " style="width: 700px;">
       <thead>
-
         <tr>
-          <th class="bg-success text-white" scope="col">DIA</th>
-          <th class="bg-success text-white" scope="col">HORA</th>
+          <th class="bg-success text-white" scope="col">FECHA</th>
           <th class="bg-success text-white" scope="col">MEDICO</th>
           <th class="bg-success text-white" scope="col">ELEGIR</th>
         </tr>
-
       </thead>
-
       <tbody>
 
         {foreach from=$turnos item=turno}
-
           <tr>
-
-            <td>{$turno->dia}</td>
-            <td>{$turno->hora}</td>
+            <td>{$turno->fecha}</td>
             <td>{$turno->nombre_medico}</td>
 
-
-
             {if $turno->disponible == 1}
-
               <td>
                 <button> <a href="elegirturno/{$turno->id_turno}">Elegir</a> </button>
               </td>
-
             {/if}
 
             {if $turno->disponible == 0}
               <td>
-                <button type="button"> <a href=""> No Disponible </a> </button>
+                <button type="button">No Disponible</button>
               </td>
             {/if}
 
@@ -65,11 +41,8 @@
         {/foreach}
 
       </tbody>
-
     </table>
-
   </div>
-
 </div>
 
 </div>
