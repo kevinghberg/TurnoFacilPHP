@@ -24,6 +24,6 @@ Por ejemplo: MYS-60
 
 | MYS-# | Fecha de registro | Miembro | Entrada | Salida obtenida | Salida esperada | Fallo |
 | ------------- | ------------- | ------------- | ------------- |  ------------- | ------------- | --- |
-| MYS-90 | 17/0/2022 | Pepe | Datos necesarios para la funcionalidad |  |  | Si/No |
+| MYS-88 | 30/6/2022 | Flavia | Filtrado de Medicos | Lista de medicos segun filtro | Lista de medicos segun filtro | No |
 
 </details>
