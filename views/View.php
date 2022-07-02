@@ -12,7 +12,7 @@ class View
     public function __construct()
     {
         $this->smarty = new Smarty();
-        $this->smarty->assign('base_url', BASE_URL);
+        $this->smarty->assign('url', BASE_URL);
         $this->authhelper = new AuthHelper();
         $username = $this->authhelper->getLoggedUserName();
         $this->smarty->assign('username', $username);

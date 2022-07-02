@@ -5,6 +5,7 @@ require_once('controllers/ControllerPaciente.php');
 require_once('controllers/ControllerMedico.php');
 require_once('controllers/ControllerSecretaria.php');
 
+// base url
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
 if (empty($_GET["action"])) {
