@@ -18,10 +18,10 @@ class View
         $this->smarty->assign('username', $username);
         if (!empty($_SESSION['PACIENTE']))
             $this->smarty->assign('pacientecheck', true);
-        if (!empty($_SESSION['MEDICO']))
-            $this->smarty->assign('medicocheck', true);
         if (!empty($_SESSION['SECRETARIA']))
             $this->smarty->assign('secretariacheck', true);
+        if (!empty($_SESSION['MEDICO']))
+            $this->smarty->assign('medicocheck', true);
     }
 
     public function render404()

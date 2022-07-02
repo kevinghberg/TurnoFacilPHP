@@ -1,7 +1,7 @@
 <?php
 
-include_once('views/SecretariaView.php');
-include_once('models/ModelSecretaria.php');
+include_once('./views/SecretariaView.php');
+include_once('./models/ModelSecretaria.php');
 
 class ControllerSecretaria extends Controller
 {
@@ -25,7 +25,7 @@ class ControllerSecretaria extends Controller
             $checkUsername = $this->model->comprobarUsername($_POST['username'], $_POST['password']);
             if ($checkUsername == 1) {
                 $username = $_POST['username'];
-                AuthHelper::loginMedico($username);
+                AuthHelper::loginSecretaria($username);
                 header("Location:" . BASE_URL . 'portalsecretaria');
             } else {
                 header("Location:" . BASE_URL . 'loginpersonal');

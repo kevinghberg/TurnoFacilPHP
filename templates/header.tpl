@@ -17,15 +17,19 @@
       <ul class="navbar-nav">
         {if isset($username) && $username}
           <li class="nav-item active">
+
+            {if isset($secretariacheck) && $username}
+              <a class="nav-link" href="portalsecretaria">HOME<span class="sr-only"></span></a>
+            {/if}
+
             {if isset($pacientecheck)}
-              <a class="nav-link" href="portalpaciente">HOME <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="portalpaciente">HOME<span class="sr-only"></span></a>
             {/if}
+
             {if isset($medicocheck)}
-              <a class="nav-link" href="portalmedico">HOME <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="portalmedico">HOME<span class="sr-only"></span></a>
             {/if}
-            {if isset($secretariacheck)}
-              <a class="nav-link" href="portalsecretaria">HOME <span class="sr-only">(current)</span></a>
-            {/if}
+
           </li>
           <li class="nav-item">
             <a class="nav-link" href="deslogear">LOGOUT</a>
