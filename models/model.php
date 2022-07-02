@@ -10,11 +10,11 @@ class Model {
     }
 
     public function create_connection() {
-        $db = new PDO('mysql:host=localhost;dbname=turno_facil;charset=utf8', 'root', '');
+        $db = new PDO('mysql:host=localhost;dbname=db_scrum;charset=utf8', 'root', '');
         $host = 'localhost';
         $userName = 'root';
         $password = '';
-        $database = 'turno_facil';
+        $database = 'db_scrum';
 
         try {
             $db = new PDO("mysql:host=$host;dbname=$database;charset=utf8", $userName, $password);

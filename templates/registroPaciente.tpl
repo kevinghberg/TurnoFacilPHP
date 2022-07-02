@@ -22,3 +22,5 @@
     <input type="submit" value="REGISTRAR">
 
 </form>
+
+{include file="footer.tpl"}

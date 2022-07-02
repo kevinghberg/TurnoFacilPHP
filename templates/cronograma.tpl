@@ -38,6 +38,8 @@
     </div>
     <div class="d-flex justify-content-center col-2">
         <a href="#">DESCARGAR COMO PDF </a>
-        <a href=" {$base_url}portalmedico">Volver atrás</a>
+        <a href="portalmedico">Volver atrás</a>
     </div>
 </div>
+
+{include file="footer.tpl"}
