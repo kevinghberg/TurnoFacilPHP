@@ -36,7 +36,7 @@ class ControllerMedico extends Controller
 
     public function mostrarCronograma()
     {
-        $turnos = $this->model->getTurnosMedicoPorUsername($_SESSION['USERNAME']);
+        $turnos = $this->model->getTurnosMedico($_SESSION['USERNAME']);
         $this->view->showCronograma($turnos);
     }
 }

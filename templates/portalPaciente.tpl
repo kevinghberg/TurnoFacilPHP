@@ -7,22 +7,22 @@
 
 
 
-    <div class="w-25 p-5 border border-secondary mt-5 rounded text-center mb-5 bg-success">
+    <div class="w-25 p-5 border border-secondary mt-5 rounded text-center mb-5 color">
 
-        <a href="turnos" class="link-light">SACAR TURNO</a>
-
-    </div>
-
-
-    <div class="w-25 p-5 border border-secondary mt-5 rounded text-center  mb-5 bg-success">
-
-        <a href="turnospaciente" class="link-light">MIS TURNOS</a>
+        <a href="sacarturno" class="link-dark colorb btn btn-secondary">SACAR TURNO</a>
 
     </div>
 
-    <div class="w-25 p-5 border border-secondary mt-5 rounded text-center  mb-5 bg-success">
 
-        <a href="medicos" class="link-light">VER MEDICOS</a>
+    <div class="w-25 p-5 border border-secondary mt-5 rounded text-center  mb-5 color">
+
+        <a href="turnospaciente" class="link-dark colorb btn btn-secondary">MIS TURNOS</a>
+
+    </div>
+
+    <div class="w-25 p-5 border border-secondary mt-5 rounded text-center  mb-5 color">
+
+        <a href="medicos" class="link-dark colorb btn btn-secondary">VER MEDICOS</a>
 
     </div>
 

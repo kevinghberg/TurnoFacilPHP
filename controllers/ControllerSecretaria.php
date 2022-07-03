@@ -5,9 +5,11 @@ include_once('./models/ModelSecretaria.php');
 
 class ControllerSecretaria extends Controller
 {
+    private $modelTurnos;
 
     public function __construct()
     {
+        $this->modelTurnos = new ModelTurno();
         $this->view = new SecretariaView();
         $this->authhelper = new AuthHelper();
         $this->model = new ModelSecretaria();

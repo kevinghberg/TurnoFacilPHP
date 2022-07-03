@@ -12,7 +12,7 @@ class ModelMedico extends ModelDB
         return $sentencia->fetchAll(PDO::FETCH_OBJ);
     }
 
-    function getTurnosMedicoPorUsername($username)
+    function getTurnosMedico($username)
     {
         $sentencia = $this->getDB()->prepare(
             "SELECT * FROM turno t

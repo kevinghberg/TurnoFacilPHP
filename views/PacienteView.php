@@ -33,8 +33,9 @@ class PacienteView extends View
         $this->getSmarty()->display('templates/portalpaciente.tpl');
     }
 
-    public function showRegistro()
+    public function showRegistro($obra)
     {
+        $this->getSmarty()->assign('obras', $obra);
         $this->getSmarty()->display('templates/registroPaciente.tpl');
     }
 

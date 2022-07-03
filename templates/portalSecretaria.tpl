@@ -7,13 +7,13 @@
 
 
 
-    <div class="w-25 p-5 border border-secondary mt-5 rounded text-center mb-5 bg-success">
+    <div class="w-25 p-5 border border-secondary mt-5 rounded text-center mb-5 color">
 
-        <a href="cargarturno" class="link-light">CARGAR TURNO</a>
+        <a href="turnosolicitados" class="link-light">CARGAR TURNOS</a>
 
     </div>
 
-    <div class="w-25 p-5 border border-secondary mt-5 rounded text-center mb-5 bg-success">
+    <div class="w-25 p-5 border border-secondary mt-5 rounded text-center mb-5 color">
 
         <a href="administrarturno" class="link-light">ADMINISTRAR TURNO</a>
 

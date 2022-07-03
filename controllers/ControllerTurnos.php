@@ -23,7 +23,7 @@ class ControllerTurnos extends Controller
         $this->viewPaciente = new PacienteView();
     }
 
-
+    
     function getTurnos()
     {
 
@@ -38,7 +38,7 @@ class ControllerTurnos extends Controller
 
         $yo = $_SESSION['USERNAME'];
         $this->modelTurno->elegirTurno($yo, $id_turno);
-        header("Location: " . BASE_URL . 'turnos');
+        header("Location: " . BASE_URL . 'sacarturno');
     }
 
     function filtrarTurno()

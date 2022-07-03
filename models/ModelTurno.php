@@ -6,8 +6,7 @@ include_once "ModelDB.php";
 class ModelTurno extends ModelDB
 {
 
-
-
+   
     function getTurnos()
     {
         $sentencia = $this->getDB()->prepare("SELECT * 
@@ -49,7 +48,7 @@ class ModelTurno extends ModelDB
 
     function cancelarTurno($id_turno)
     {
-        $sentencia = $this->getDB()->prepare("UPDATE turno SET disponible=1,  dni_paciente=null WHERE id_turno=?");
+        $sentencia = $this->getDB()->prepare("UPDATE turno SET disponible=1,  dni_paciente=null, confirmado=0 WHERE id_turno=?");
         $sentencia->execute([$id_turno]);
         return $sentencia->fetch(PDO::PARAM_BOOL);
     }

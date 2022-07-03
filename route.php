@@ -9,7 +9,7 @@ require_once('controllers/ControllerSecretaria.php');
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
 if (empty($_GET["action"])) {
-  $_GET["action"] = "home";
+  $_GET["action"] = "ingreso";
 }
 
 $urlParts = explode('/', $_GET['action']);
@@ -24,7 +24,7 @@ $ControllerSecretaria = new ControllerSecretaria();
 
 switch ($urlParts[0]) {
 
-  case 'turnos':
+  case 'sacarturno':
     $ControllerTurnos->getTurnos();
     break;
 
@@ -67,6 +67,7 @@ switch ($urlParts[0]) {
   case 'portalsecretaria':
     $ControllerSecretaria->showPortalSecretaria();
     break;
+
 
   case 'logear':
     $ControllerPaciente->logear();
