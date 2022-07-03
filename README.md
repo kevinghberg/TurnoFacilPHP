@@ -12,11 +12,17 @@ Por ejemplo: MYS-60
 - **Peer Review:** Cada user story debe ser verificada por otro/a miembro del equipo que no haya estado involucrado/a en el desarrollo de la misma.
 - Todos los commits realizados desde git deben estar asociados a los ID de las tarjetas de JIRA.
 
-## Requerimientos
+## Clonar Repositorio
 - Adentro de la carpeta htdocs hacer:
 - git clone https://github.com/sierragustavo/scrum-loberia-2022.git
 
+## Base de Datos
+
+-link vertabelo diseño
+-agregar .sql al repo
+
 <details><summary>
+  
   
 ### PLANTILLA DE TESTEO
 
