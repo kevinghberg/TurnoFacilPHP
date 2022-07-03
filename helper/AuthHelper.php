@@ -21,6 +21,7 @@ Class AuthHelper
 
     public static function logout() {
         self::start();
+        $_SESSION['MEDICO'] = null;
         session_destroy();
     }
 

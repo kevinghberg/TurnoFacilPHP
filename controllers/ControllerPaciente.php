@@ -89,7 +89,7 @@ class ControllerPaciente extends Controller
         if (!empty($nombre) && !empty($apellido) && !empty($direccion) && !empty($telefono)) {
             $this->modelPaciente->registrarPaciente($dni, $nombre, $apellido, $password, $direccion, $numeroAfiliado, $telefono, $ObraSocial);
 
-            header("Location: " . BASE_URL . 'portalpaciente');
+            header("Location: " . BASE_URL . 'ingreso');
         }
     }
 
@@ -112,6 +112,8 @@ class ControllerPaciente extends Controller
 
     public function showRegistro()
     {
-        $this->viewPaciente->showRegistro();
+        $obra = $this->modelMedico->obtenerObraSocial();
+
+        $this->viewPaciente->showRegistro($obra);
     }
 }

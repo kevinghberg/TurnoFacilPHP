@@ -14,9 +14,11 @@
         <li class="list-group-item">Trabaja con: OSDE</li>
     </ul>
 
-    <div class="w-25 p-5 border border-secondary mt-5 rounded text-center mb-5 bg-success">
+    <div class="w-25 p-5 border border-secondary mt-5 rounded text-center mb-5 color">
 
-        <a href="cronograma" class="link-light">Cronograma</a>
+        <a href="cronograma" class="link-dark colorb btn btn-secondary">Cronograma</a>
 
     </div>
 </div>
+
+{include file="footer.tpl"}

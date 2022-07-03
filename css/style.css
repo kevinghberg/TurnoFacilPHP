@@ -2,7 +2,14 @@
     text-align: center;
 }
 
-
+footer {
+    padding: 1%;
+    background-color: #49bb37;
+    
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
 
 .logoimg{
     width: 40%;
@@ -10,7 +17,6 @@
 
 .bienvenida{
     width: 20%;
-
 }
 
 .caja{
@@ -21,10 +27,18 @@
     margin-top: 2%;
 }
 
-.btn{
+.btns{
     width: 100%;
     height: 100%;
-    background-color: #198754;
+    background-color: #49bb37;
+}
+
+.color {
+    background-color: #49bb37;
+}
+
+.colorb{
+    background-color: white;
 }
 
 h5{
@@ -44,5 +58,8 @@ h5{
     height: 100px;
 }
 
+.img-ingreso{
+    height: 150px;
+}
 
 

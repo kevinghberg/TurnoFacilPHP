@@ -4,11 +4,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bootstrap demo</title>
+  <title>TurnoFacil</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="imagenes/t.jpg" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Anton|Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
 </head>
 
 <body>
@@ -17,15 +21,19 @@
       <ul class="navbar-nav">
         {if isset($username) && $username}
           <li class="nav-item active">
+
+            {if isset($secretariacheck) && $username}
+              <a class="nav-link" href="portalsecretaria">HOME<span class="sr-only"></span></a>
+            {/if}
+
             {if isset($pacientecheck)}
-              <a class="nav-link" href="portalpaciente">HOME <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="portalpaciente">HOME<span class="sr-only"></span></a>
             {/if}
+
             {if isset($medicocheck)}
-              <a class="nav-link" href="portalmedico">HOME <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="portalmedico">HOME<span class="sr-only"></span></a>
             {/if}
-            {if isset($secretariacheck)}
-              <a class="nav-link" href="portalsecretaria">HOME <span class="sr-only">(current)</span></a>
-            {/if}
+
           </li>
           <li class="nav-item">
             <a class="nav-link" href="deslogear">LOGOUT</a>

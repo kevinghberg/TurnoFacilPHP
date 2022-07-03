@@ -12,16 +12,16 @@ class View
     public function __construct()
     {
         $this->smarty = new Smarty();
-        $this->smarty->assign('base_url', BASE_URL);
+        $this->smarty->assign('url', BASE_URL);
         $this->authhelper = new AuthHelper();
         $username = $this->authhelper->getLoggedUserName();
         $this->smarty->assign('username', $username);
         if (!empty($_SESSION['PACIENTE']))
             $this->smarty->assign('pacientecheck', true);
-        if (!empty($_SESSION['MEDICO']))
-            $this->smarty->assign('medicocheck', true);
         if (!empty($_SESSION['SECRETARIA']))
             $this->smarty->assign('secretariacheck', true);
+        if (!empty($_SESSION['MEDICO']))
+            $this->smarty->assign('medicocheck', true);
     }
 
     public function render404()

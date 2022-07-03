@@ -12,4 +12,6 @@ class ModelSecretaria extends ModelDB
         $sentencia->execute([$username, $password]);
         return $sentencia->fetch(PDO::PARAM_BOOL);
     }
+
+    
 }

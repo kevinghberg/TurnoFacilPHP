@@ -22,8 +22,10 @@ Por ejemplo: MYS-60
 
 </summary>
 
-| MYS-# | Fecha de registro | Miembro | Entrada | Salida obtenida | Salida esperada | Fallo |
-| ------------- | ------------- | ------------- | ------------- |  ------------- | ------------- | --- |
-| MYS-90 | 17/0/2022 | Pepe | Datos necesarios para la funcionalidad |  |  | Si/No |
-
+| MYS-# | Fecha de registro | Miembro | Salida esperada | Salida obtenida | Fallo |
+| ------------- | ------------- | ------------- |  ------------- | ------------- | --- |
+| MYS-88 | 30/6/2022 | Flavia | Ver Lista de medicos y poder filtrarla  | Muestra Lista de medicos segun filtro | No |
+| MYS-87 | 1/7/2022 | Fausto | Ver formulario para ingresar con DNI al entrar a la pagina | Muestra formulario para ingresar con DNI  | No |
+| MYS-86 | 1/7/2022 | Fausto | Ver formulario para registrarme con mis datos y que se cargue a la base de datos| Muestra formulario para registrarme y carga el registro a la base de datos | No |
+| MYS-96| 1/7/2022 | Kevin | Ver lista de turnos de un determinado medico | Muestra lista de turnos venideros segun el medico en sesion | No |
 </details>
