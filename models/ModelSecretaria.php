@@ -13,5 +13,13 @@ class ModelSecretaria extends ModelDB
         return $sentencia->fetch(PDO::PARAM_BOOL);
     }
 
-    
+    /**
+     * Retorna el id_secretaria que coincida con el $username
+     */
+    function getId($username)
+    {
+        $sentencia = $this->getDb()->prepare("SELECT id_secretaria FROM secretaria WHERE username = ?");
+        $sentencia->execute([$username]);
+        return $sentencia->fetch(PDO::PARAM_BOOL);
+    }
 }

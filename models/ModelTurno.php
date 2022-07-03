@@ -52,4 +52,37 @@ class ModelTurno extends ModelDB
         $sentencia->execute([$id_turno]);
         return $sentencia->fetch(PDO::PARAM_BOOL);
     }
+
+    /**
+     * Confirma el turno al paciente
+     */
+    function confirmarTurnoPaciente($id_turno)
+    {
+        $sentencia = $this->getDB()->prepare("UPDATE turno SET confirmado=1  WHERE id_turno=?");
+        $sentencia->execute([$id_turno]);
+        return $sentencia->fetch(PDO::PARAM_BOOL);
+    }
+
+    /**
+     * carga turno al medico
+     */
+    function cargarTurnoMedico($id_turno, $id_medico)
+    {
+        $sentencia = $this->getDB()->prepare("INSERT INTO medico_turnos(id_medico, id_turno) VALUES (?,?)");
+        $sentencia->execute([$id_medico, $id_turno]);
+        return $sentencia->fetch(PDO::PARAM_BOOL);
+    }
+
+    /**
+     * Retorna los turnos solicitados de los medicxs que tengan su id_secretaria = $id
+     */
+    function getTurnosSecretaria($id)
+    {
+        $sentencia = $this->getDB()->prepare("SELECT * 
+                                             FROM turno t
+                                             JOIN medico m ON t.id_medico = m.id_medico 
+                                             WHERE m.id_secretaria=?");
+        $sentencia->execute([$id]);
+        return $sentencia->fetchAll(PDO::FETCH_OBJ);
+    }
 }

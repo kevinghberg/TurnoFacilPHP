@@ -40,4 +40,24 @@ class ControllerSecretaria extends Controller
     {
         $this->view->showPortalSecretaria();
     }
+
+    //funcion para cargarle un turno a un medico y confirmarselo al paciente
+    public function cargarTurno($id_turno, $id_medico)
+    {
+        $this->modelTurnos->cargarTurnoMedico($id_turno, $id_medico);
+        $this->modelTurnos->confirmarTurnoPaciente($id_turno);
+        header("Location:" . BASE_URL . 'turnosolicitados');
+        
+    }
+    
+    //funcion para mostrar los turnos solicitados de lxs medicxs segun el id_secretaria
+    public function showCargarTurno()
+    {
+        $username = AuthHelper::getLoggedUserName();
+        $id = $this->model->getId($username);
+        $id = intval($id->id_secretaria);
+        $turnos = $this->modelTurnos->getTurnosSecretaria($id);
+      
+        $this->view->showCargarTurno($turnos);
+    }
 }

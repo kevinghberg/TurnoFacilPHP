@@ -17,5 +17,11 @@ class SecretariaView extends View
         $this->getSmarty()->display("templates/portalSecretaria.tpl");
     }
 
+    public function showCargarTurno($turnos)
+    {
+        $this->getSmarty()->assign('turnos', $turnos);
+        $this->getSmarty()->display("templates/cargarTurno.tpl");
+    }
+ 
     
 }

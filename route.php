@@ -68,6 +68,13 @@ switch ($urlParts[0]) {
     $ControllerSecretaria->showPortalSecretaria();
     break;
 
+  case 'cargarturno':
+    $ControllerSecretaria->cargarTurno($urlParts[1], $urlParts[2]);
+    break;
+
+  case 'turnosolicitados':
+    $ControllerSecretaria->showCargarTurno();
+    break;
 
   case 'logear':
     $ControllerPaciente->logear();
@@ -80,7 +87,7 @@ switch ($urlParts[0]) {
   case 'logearsecretaria':
     $ControllerSecretaria->logearSecretaria();
     break;
-    
+
   case 'deslogear':
     $Controller->deslogear();
     break;

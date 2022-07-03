@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-07-2022 a las 18:40:51
+-- Tiempo de generación: 04-07-2022 a las 01:40:45
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.6
 
@@ -67,7 +67,10 @@ CREATE TABLE `medico_turnos` (
 --
 
 INSERT INTO `medico_turnos` (`id_medico`, `id_turno`) VALUES
-(1, 1);
+(1, 1),
+(1, 2),
+(2, 3),
+(3, 4);
 
 -- --------------------------------------------------------
 
@@ -183,9 +186,9 @@ CREATE TABLE `turno` (
 
 INSERT INTO `turno` (`id_turno`, `id_medico`, `dni_paciente`, `disponible`, `fecha`, `confirmado`) VALUES
 (1, 1, 1, 0, '2022-08-18 14:42:59', 1),
-(2, 1, NULL, 1, '2022-07-11 03:42:59', 0),
-(3, 2, NULL, 1, '2022-07-14 11:47:59', 0),
-(4, 3, NULL, 1, '2022-07-29 05:42:59', 0),
+(2, 1, 1, 0, '2022-07-11 03:42:59', 1),
+(3, 2, 3, 0, '2022-07-14 11:47:59', 1),
+(4, 3, 3, 0, '2022-07-29 05:42:59', 1),
 (5, 3, NULL, 1, '2022-07-30 09:04:59', 0),
 (6, 4, NULL, 1, '2022-07-02 03:42:59', 0);
 
