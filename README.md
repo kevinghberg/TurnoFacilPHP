@@ -22,9 +22,9 @@ Por ejemplo: MYS-60
 
 </summary>
 
-| MYS-# | Fecha de registro | Miembro | Entrada | Salida obtenida | Salida esperada | Fallo |
+| MYS-# | Fecha de registro | Miembro | Salida esperada | Salida obtenida | Fallo |
 | ------------- | ------------- | ------------- | ------------- |  ------------- | ------------- | --- |
-| MYS-88 | 30/6/2022 | Flavia | Probar pagina Medicos | Muestra Lista de medicos segun filtro | Ver Lista de medicos segun filtro | No |
-| MYS-87 | 1/7/2022 | Fausto | Probar pagina Ingreso | Muestra formulario para ingresar con DNI | Ver formulario para ingresar con DNI  | No |
-| MYS-86 | 1/7/2022 | Fausto | Probar pagina Registrar | Muestra formulario para registrarme con mis datos | Ver formulario para registrarme | No |
+| MYS-88 | 30/6/2022 | Flavia | Ver Lista de medicos y poder filtrarla  | Muestra Lista de medicos segun filtro | No |
+| MYS-87 | 1/7/2022 | Fausto | Ver formulario para ingresar con DNI al entrar a la pagina | Muestra formulario para ingresar con DNI  | No |
+| MYS-86 | 1/7/2022 | Fausto | Ver formulario para registrarme con mis datos y que se cargue a la base de datos| Muestra formulario para registrarme y carga el registro a la base de datos | No |
 </details>
