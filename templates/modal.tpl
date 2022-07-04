@@ -36,7 +36,7 @@
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CERRAR</button>
                 <form action="{$url}bajapaciente" method="POST">
                     <input type="hidden" id="id_turno" name="id_turno" value="{$turno->id_turno}">
-                    <button type="submit" value="{$turno->id_turno}">CANCELAR</button>
+                    <button type="submit" value="{$turno->id_turno}">DAR DE BAJA</button>
                 </form>
             </div>
         </div>

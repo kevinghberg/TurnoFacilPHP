@@ -119,4 +119,10 @@ class ModelTurno extends ModelDB
         $query->execute(([$id_turno]));
         return $query->fetch(PDO::FETCH_OBJ);
     }
+
+    function agregarTurnoNuevo($id_medico,$fecha){
+        $query = $this->getDb()->prepare("INSERT INTO turno (id_medico, fecha) VALUES (?,?)");
+        $query->execute([$id_medico,$fecha]);
+        return $query->fetch(PDO::FETCH_OBJ);
+    }
 }

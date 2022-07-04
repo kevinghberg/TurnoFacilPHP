@@ -131,4 +131,8 @@ switch ($urlParts[0]) {
   case 'bajapaciente':
     $ControllerTurnos->darDeBajaPaciente();
     break;
+
+  case 'agregarturno':
+    $ControllerTurnos->agregarTurnoNuevo();
+    break;
 }
