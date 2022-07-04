@@ -24,19 +24,15 @@
 
             {if isset($secretariacheck)}
               <a class="nav-link" href="{$url}portalsecretaria">HOME<span class="sr-only"></span></a>
-            
+
 
             {elseif isset($pacientecheck)}
               <a class="nav-link" href="{$url}portalpaciente">HOME<span class="sr-only"></span></a>
-           
+
 
             {elseif isset($medicocheck)}
               <a class="nav-link" href="{$url}portalmedico">HOME<span class="sr-only"></span></a>
             {/if}
-
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{$url}deslogear">LOGOUT</a>
           </li>
           <li class="nav-item">
             <a class="nav-link fw-bold">{$username}</a>
@@ -54,6 +50,11 @@
         {if isset($medico) && ($medico==true)}
           <li class="nav-item">
             <a class="nav-link" href="{$url}listarmedicos">MIS TURNOS</a>
+          </li>
+        {/if}
+        {if isset($username) && $username}
+          <li class="nav-item">
+            <a class="nav-link" href="{$url}deslogear">LOGOUT</a>
           </li>
         {/if}
       </ul>
