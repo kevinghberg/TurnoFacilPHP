@@ -15,7 +15,7 @@
 
     <div class="w-25 p-5 border border-secondary mt-5 rounded text-center mb-5 color">
 
-        <a href="administrarturno" class="link-light">ADMINISTRAR TURNO</a>
+        <a href="administrarturnos" class="link-light">ADMINISTRAR TURNO</a>
 
     </div>
 

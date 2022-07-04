@@ -60,4 +60,9 @@ class ControllerSecretaria extends Controller
       
         $this->view->showCargarTurno($turnos);
     }
+
+    public function showAdministrarTurnos(){
+        $this->view->showAdministrarTurnos();
+    }
+  
 }

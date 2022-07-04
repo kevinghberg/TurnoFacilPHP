@@ -24,7 +24,7 @@
                             <td>{$turno->nombre_medico}</td>
                             <td>
                                 <a href="cargarturno/{$turno->id_turno}/{$turno->id_medico}"
-                                    class="btn btn-success color">Cargar turno</a>
+                                    class="btn btn-success color">Confirmar turno</a>
                             </td>
 
 
