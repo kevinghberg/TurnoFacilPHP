@@ -3,46 +3,61 @@
 {include 'templates/modal.tpl'}
 
 
-<div class="container-sm border border-secondary mt-3 rounded" style="width: 1000px ; height: 550px;">
 
-    <div class="text-center">
-        <h1 class="mt-2">Panel Turno</h1>
+
+<div class="container-sm border border-secondary mt-5 rounded" style="width: 1000px ; height: 600px;">
+
+    <div class="text-center mt-5">
+        <h1 class="mt-3">TURNO </h1>
     </div>
 
-    <div>
-        <h3>Medico</h3>
-        Nombre: {$turno->nombre_medico}
-        Especialidad: {$turno->especialidad}
+    <div class="d-flex justify-content-around align-items-center mt-5">
+
+
+
+
+
+        <ul class="list-group">
+            <li class="list-group-item fw-bold ">Medico: {$turno->nombre_medico}</li>
+            <li class="list-group-item fw-bold">Especialidad: {$turno->especialidad}</li>
+            {if isset($turno->nombre_paciente)}
+                <li class="list-group-item fw-bold">Paciente: {$turno->nombre_paciente} {$turno->apellido}</li>
+                <li class="list-group-item fw-bold">Telefono: {$turno->telefono}</li>
+                <li class="list-group-item fw-bold"> DNI: {$turno->dni_paciente}</li>
+            {else}
+                <li class="list-group-item fw-bold">No tiene paciente</li>
+            {/if}
+            <li class="list-group-item fw-bold"> Fecha del turno: {$turno->fecha}</li>
+        </ul>
+
+    </div>
+
+    <div class=" d-flex justify-content-center mt-5">
 
         {if isset($turno->nombre_paciente)}
-            <h3>Paciente</h3>
-            Nombre: {$turno->nombre_paciente}
-            Apellido: {$turno->apellido}
-            Telefono: {$turno->telefono}
-            DNI: {$turno->dni_paciente}
-        {else}
-            <h3 class=text-success>No tiene paciente</h3>
-        {/if}
-        <h4>Fecha del turno: {$turno->fecha}</h4>
-        {if isset($turno->nombre_paciente)}
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cancelarturno">
+            <button type="button" class="btn btn-success mx-3 " data-bs-toggle="modal" data-bs-target="#cancelarturno" class="btns">
                 Dar de baja paciente
             </button>
         {/if}
-        <br>
         {if ($turno->disponible == 1)}
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bloquearturno">
+            <button type="button" class="btn btn-success mx-3 "  data-bs-toggle="modal" data-bs-target="#bloquearturno" >
                 Bloquear Turno
             </button>
         {else}
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#desbloquearturno">
+            <button type="button" class="btn btn-success mx-3" data-bs-toggle="modal" data-bs-target="#desbloquearturno">
                 Desbloquear Turno
             </button>
         {/if}
-    </div>
-    <div>
-        <a href="{$url}administrarturnos">Volvera la pagina anterior</a>
 
     </div>
+
 </div>
+
+<div>
+    <a href="{$url}administrarturnos">Volvera la pagina anterior</a>
+
+</div>
+
+</div>
+
 {include 'templates/footer.tpl'}
