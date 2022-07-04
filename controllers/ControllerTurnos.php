@@ -88,4 +88,12 @@ class ControllerTurnos extends Controller
         $this->modelTurno->darDeBajaPaciente($id_turno);
         header("Location:" . BASE_URL . 'panelturno/' . $id_turno);
     }
+
+    function agregarTurnoNuevo(){
+        $fecha = $_POST['inputFecha'];
+        $id_medico = $_POST['medicoInput'];
+        $this->modelTurno->agregarTurnoNuevo($id_medico,$fecha);
+        header("Location:" . BASE_URL . 'administrarturnos');
+
+    }
 }
