@@ -22,15 +22,15 @@
         {if isset($username) && $username}
           <li class="nav-item active">
 
-            {if isset($secretariacheck) && $username}
+            {if isset($secretariacheck)}
               <a class="nav-link" href="{$url}portalsecretaria">HOME<span class="sr-only"></span></a>
-            {/if}
+            
 
-            {if isset($pacientecheck)}
+            {elseif isset($pacientecheck)}
               <a class="nav-link" href="{$url}portalpaciente">HOME<span class="sr-only"></span></a>
-            {/if}
+           
 
-            {if isset($medicocheck)}
+            {elseif isset($medicocheck)}
               <a class="nav-link" href="{$url}portalmedico">HOME<span class="sr-only"></span></a>
             {/if}
 
