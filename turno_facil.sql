@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-07-2022 a las 01:40:45
--- Versión del servidor: 10.4.19-MariaDB
--- Versión de PHP: 8.0.6
+-- Tiempo de generación: 04-07-2022 a las 06:07:37
+-- Versión del servidor: 10.4.18-MariaDB
+-- Versión de PHP: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,15 +41,11 @@ CREATE TABLE `medico` (
 --
 
 INSERT INTO `medico` (`id_medico`, `id_secretaria`, `username`, `password`, `especialidad`, `nombre_medico`) VALUES
-(1, 1, 'medico1', '1234', 'especialidad1', 'medico 1'),
-(2, 1, 'medico2', '1234', 'especialidad2', 'medico 2'),
-(3, 1, 'medico3', '1234', 'especialidad1', 'medico 3'),
-(4, 2, 'medico4', '1234', 'especialidad1', 'medico 4'),
-(5, 3, 'medico5', '1234', 'especialidad4', 'medico 5'),
-(6, 4, 'medico6', '1234', 'especialidad2', 'medico 6'),
-(7, 2, 'medico7', '1234', 'especialidad1', 'medico 7'),
-(8, 3, 'medico8', '1234', 'especialidad4', 'medico 8'),
-(9, 4, 'medico9', '1234', 'especialidad2', 'medico 9');
+(1, 1, 'medico_1', 'cabezas', 'General', 'Lucas Cipolletti'),
+(2, 1, 'medico_2', '12345678', 'Cardiologo', 'Augusto Poletti'),
+(3, 2, 'medico_3', '12345678', 'Covid', 'Gavarrino'),
+(4, 2, 'medico_4', '12345678', 'Kinisiologo', 'Juani Tironi'),
+(5, 1, 'medico_5', '12345678', 'Covid', 'Ruth Calles');
 
 -- --------------------------------------------------------
 
@@ -89,10 +85,8 @@ CREATE TABLE `obra_social` (
 --
 
 INSERT INTO `obra_social` (`nombre_corto`, `id_obra_social`, `nombre_largo`) VALUES
-('o1', 1, 'obra_1'),
-('02', 2, 'obra_2'),
-('o3', 3, 'obra_3'),
-('04', 4, 'obra_4');
+('OSDE', 1, 'OSDE'),
+('UATRE', 2, 'UATRE');
 
 -- --------------------------------------------------------
 
@@ -116,9 +110,9 @@ CREATE TABLE `paciente` (
 --
 
 INSERT INTO `paciente` (`dni_paciente`, `nombre_paciente`, `apellido`, `password`, `direccion`, `id_afiliado`, `telefono`, `id_obra_social`) VALUES
-(1, 'paciente', '1', '1234', '1', 213, '123123', 1),
-(2, 'paciente', '2', '1234', 'fasd', 12345, '123421412', 1),
-(3, 'paciente', '3', '1234', 'fas', 12, '22222', 2);
+(17297597, 'Gustavo Daniel', 'Sierra', '15505241', '79 335', NULL, '2262617462', NULL),
+(18472306, 'Cecilia', 'Barenbaum', '15505241', '71 484', 456489146, '2262351852', 1),
+(39146705, 'Gustavo', 'Sierra', '15505241', '71 484', NULL, '2262516630', NULL);
 
 -- --------------------------------------------------------
 
@@ -137,10 +131,8 @@ CREATE TABLE `secretaria` (
 --
 
 INSERT INTO `secretaria` (`id_secretaria`, `username`, `password`) VALUES
-(1, 'secretaria1', '1234'),
-(2, 'secretaria2', '1234'),
-(3, 'secretaria3', '1234'),
-(4, 'secretaria4', '1234');
+(1, 'secretaria_1', '12345678'),
+(2, 'secretaria_2', '12345678');
 
 -- --------------------------------------------------------
 
@@ -158,12 +150,9 @@ CREATE TABLE `trabaja_con` (
 --
 
 INSERT INTO `trabaja_con` (`id_medico`, `id_obra_social`) VALUES
-(1, 2),
+(1, 1),
 (2, 1),
-(3, 2),
-(4, 3),
-(5, 1),
-(6, 4);
+(5, 1);
 
 -- --------------------------------------------------------
 
@@ -173,11 +162,11 @@ INSERT INTO `trabaja_con` (`id_medico`, `id_obra_social`) VALUES
 
 CREATE TABLE `turno` (
   `id_turno` int(11) NOT NULL,
-  `id_medico` int(11) NOT NULL,
+  `id_medico` int(11) DEFAULT NULL,
   `dni_paciente` int(11) DEFAULT NULL,
-  `disponible` tinyint(1) NOT NULL,
+  `disponible` tinyint(1) NOT NULL DEFAULT 1,
   `fecha` datetime NOT NULL,
-  `confirmado` int(11) NOT NULL
+  `confirmado` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -185,12 +174,11 @@ CREATE TABLE `turno` (
 --
 
 INSERT INTO `turno` (`id_turno`, `id_medico`, `dni_paciente`, `disponible`, `fecha`, `confirmado`) VALUES
-(1, 1, 1, 0, '2022-08-18 14:42:59', 1),
-(2, 1, 1, 0, '2022-07-11 03:42:59', 1),
-(3, 2, 3, 0, '2022-07-14 11:47:59', 1),
-(4, 3, 3, 0, '2022-07-29 05:42:59', 1),
-(5, 3, NULL, 1, '2022-07-30 09:04:59', 0),
-(6, 4, NULL, 1, '2022-07-02 03:42:59', 0);
+(1, 1, NULL, 1, '2022-06-30 12:00:00', 0),
+(2, 1, NULL, 0, '2022-07-01 13:00:00', 1),
+(3, 2, 18472306, 0, '2022-07-02 13:00:00', 1),
+(4, 3, NULL, 1, '2022-07-04 06:01:47', 0),
+(5, 1, NULL, 1, '2022-07-13 01:04:00', 0);
 
 --
 -- Índices para tablas volcadas
@@ -242,7 +230,18 @@ ALTER TABLE `trabaja_con`
 --
 ALTER TABLE `turno`
   ADD PRIMARY KEY (`id_turno`),
-  ADD KEY `TURNO_MEDICO` (`id_medico`);
+  ADD KEY `TURNO_MEDICO` (`id_medico`),
+  ADD KEY `TURNO_PACIENTE` (`dni_paciente`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `turno`
+--
+ALTER TABLE `turno`
+  MODIFY `id_turno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas
@@ -253,13 +252,6 @@ ALTER TABLE `turno`
 --
 ALTER TABLE `medico`
   ADD CONSTRAINT `MEDICO_SECRETARIA` FOREIGN KEY (`id_secretaria`) REFERENCES `secretaria` (`id_secretaria`);
-
---
--- Filtros para la tabla `medico_turnos`
---
-ALTER TABLE `medico_turnos`
-  ADD CONSTRAINT `medico_turnos_medico` FOREIGN KEY (`id_medico`) REFERENCES `medico` (`id_medico`),
-  ADD CONSTRAINT `medico_turnos_turno` FOREIGN KEY (`id_turno`) REFERENCES `turno` (`id_turno`);
 
 --
 -- Filtros para la tabla `paciente`
@@ -278,7 +270,8 @@ ALTER TABLE `trabaja_con`
 -- Filtros para la tabla `turno`
 --
 ALTER TABLE `turno`
-  ADD CONSTRAINT `TURNO_MEDICO` FOREIGN KEY (`id_medico`) REFERENCES `medico` (`id_medico`);
+  ADD CONSTRAINT `TURNO_MEDICO` FOREIGN KEY (`id_medico`) REFERENCES `medico` (`id_medico`),
+  ADD CONSTRAINT `TURNO_PACIENTE` FOREIGN KEY (`dni_paciente`) REFERENCES `paciente` (`dni_paciente`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
