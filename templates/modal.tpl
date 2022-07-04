@@ -18,25 +18,25 @@
                                         value="{$turno->nombre_paciente} {$turno->apellido}" required id="nombre">
                                 </div>
                                 <div class="col">
-                                    <input type="email" name="email" class="form-control" value=""
+                                    <input type="email" name="email" class="form-control"
                                         placeholder="maildelpaciente@ejemplo.com" required id="email"
                                         onkeydown="copiar()">
-                                    <input type="hidden" name="_cc" value="" id="cc-email">
+                                    <input type="hidden" name="_autoresponse" value="your custom message">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <textarea
                                 placeholder="Se cancelará el turno de la fecha {$turno->fecha} con el doctor {$turno->nombre_medico}"
-                                class="form-control" name="message" rows="10"
+                                class="form-control" name="message" rows="10" onkeydown="copiar()"
                                 required>Se dará de baja al paciente {$turno->nombre_paciente} {$turno->apellido} de la fecha {$turno->fecha} con el doctor {$turno->nombre_medico}</textarea>
                         </div>
-                        <button type="submit" class="btn btn-lg btn-dark btn-block">Avisar al paciente</button>
+                        <button type=" submit" class="btn btn-lg btn-dark btn-block">Avisar al paciente</button>
                     </form>
                     <script type="text/javascript">
                         function copiar() {
-                            var email = document.getElementById("email").value;
-                            document.getElementById("cc-email").value = email;
+                            var email = document.getElementsByName("message")[0].value;
+                            document.getElementsByName("_autoresponse")[0].value = email;
                         };
                     </script>
                 </div>
