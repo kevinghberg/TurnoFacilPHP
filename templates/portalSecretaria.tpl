@@ -9,7 +9,7 @@
 
     <div class="w-25 p-5 border border-secondary mt-5 rounded text-center mb-5 color">
 
-        <a href="turnosolicitados" class="link-light">CARGAR TURNOS</a>
+        <a href="turnosolicitados" class="link-light">CONFIRMAR TURNOS</a>
 
     </div>
 
