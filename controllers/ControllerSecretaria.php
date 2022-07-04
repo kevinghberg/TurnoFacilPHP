@@ -2,6 +2,8 @@
 
 include_once('./views/SecretariaView.php');
 include_once('./models/ModelSecretaria.php');
+include_once('./models/ModelMedico.php');
+include_once('./models/ModelTurno.php');
 
 class ControllerSecretaria extends Controller
 {
@@ -13,6 +15,7 @@ class ControllerSecretaria extends Controller
         $this->view = new SecretariaView();
         $this->authhelper = new AuthHelper();
         $this->model = new ModelSecretaria();
+        $this->modelMedico = new ModelMedico();
     }
 
 
@@ -47,9 +50,8 @@ class ControllerSecretaria extends Controller
         $this->modelTurnos->cargarTurnoMedico($id_turno, $id_medico);
         $this->modelTurnos->confirmarTurnoPaciente($id_turno);
         header("Location:" . BASE_URL . 'turnosolicitados');
-        
     }
-    
+
     //funcion para mostrar los turnos solicitados de lxs medicxs segun el id_secretaria
     public function showCargarTurno()
     {
@@ -57,12 +59,14 @@ class ControllerSecretaria extends Controller
         $id = $this->model->getId($username);
         $id = intval($id->id_secretaria);
         $turnos = $this->modelTurnos->getTurnosSecretaria($id);
-      
+
         $this->view->showCargarTurno($turnos);
     }
 
-    public function showAdministrarTurnos(){
-        $this->view->showAdministrarTurnos();
+    public function showAdministrarTurnos()
+    {
+        $medicos = $this->modelMedico->getMedicos();
+        $turnos = $this->modelTurnos->getTurnos();
+        $this->view->showAdministrarTurnos($medicos, $turnos);
     }
-  
 }
