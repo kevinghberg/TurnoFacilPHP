@@ -14,9 +14,9 @@
         Nombre: {$turno->nombre_medico}
         Especialidad: {$turno->especialidad}
 
-        {if isset($turno->nombre)}
+        {if isset($turno->nombre_paciente)}
             <h3>Paciente</h3>
-            Nombre: {$turno->nombre}
+            Nombre: {$turno->nombre_paciente}
             Apellido: {$turno->apellido}
             Telefono: {$turno->telefono}
             DNI: {$turno->dni_paciente}
@@ -24,7 +24,7 @@
             <h3 class=text-success>No tiene paciente</h3>
         {/if}
         <h4>Fecha del turno: {$turno->fecha}</h4>
-        {if isset($turno->nombre)}
+        {if isset($turno->nombre_paciente)}
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cancelarturno">
                 Dar de baja paciente
             </button>

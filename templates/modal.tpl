@@ -14,7 +14,7 @@
                             <div class="form-row">
                                 <div class="col">
                                     <input type="text" name="name" class="form-control"
-                                        value="{$turno->nombre} {$turno->apellido}" required>
+                                        value="{$turno->nombre_paciente} {$turno->apellido}" required>
                                 </div>
                                 <div class="col">
                                     <input type="email" name="email" class="form-control"
@@ -26,7 +26,7 @@
                             <textarea
                                 placeholder="Se cancelará el turno de la fecha {$turno->fecha} con el doctor {$turno->nombre_medico}"
                                 class="form-control" name="message" rows="10"
-                                required>Se dará de baja al paciente {$turno->nombre} {$turno->apellido} de la fecha {$turno->fecha} con el doctor {$turno->nombre_medico}</textarea>
+                                required>Se dará de baja al paciente {$turno->nombre_paciente} {$turno->apellido} de la fecha {$turno->fecha} con el doctor {$turno->nombre_medico}</textarea>
                         </div>
                         <button type="submit" class="btn btn-lg btn-dark btn-block">Avisar al paciente</button>
                     </form>
