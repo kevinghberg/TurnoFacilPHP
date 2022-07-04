@@ -18,8 +18,7 @@ Por ejemplo: MYS-60
 
 ## Base de Datos
 
--link vertabelo diseño
--agregar .sql al repo
+- [Diagrama en Vertabelo](https://my.vertabelo.com/model/rpeBYwKtA7Y6CuFOd274ferLJZWbjHwj)
 
 <details><summary>
   
