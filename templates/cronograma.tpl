@@ -12,7 +12,6 @@
                 <tr class="color">
                     <th class="text-white" scope="col">Fecha</th>
                     <th class="text-white" scope="col">Paciente</th>
-                    <th class="text-white" scope="col">Administrar</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,9 +26,6 @@
                             <p class="text-danger">No tiene paciente</p>
                             </td>
                         {/if}
-                        <td>
-                            <a class="btn btn-warning" href="#">ADMINISTRAR</a>
-                        </td>
                     </tr>
                 {/foreach}
             </tbody>
