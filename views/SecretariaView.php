@@ -23,9 +23,13 @@ class SecretariaView extends View
         $this->getSmarty()->display("templates/cargarTurno.tpl");
     }
 
-    public function showAdministrarTurnos()
+    public function showAdministrarTurnos($turnos,$medicos)
     {
+        $this->getSmarty()->assign('turnos',$turnos);
+        $this->getSmarty()->assign('medicos',$medicos);
         $this->getSmarty()->display("templates/administrarturnos.tpl");
-    } 
+    }
+
+
     
 }
