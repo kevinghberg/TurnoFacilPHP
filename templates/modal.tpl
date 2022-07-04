@@ -9,16 +9,19 @@
             <div class="modal-body">
                 <div class="container">
                     <h1>Enviar Mail</h1>
-                    <form target="_blank" action="https://formsubmit.co/gustavodavid04@gmail.com" method="POST">
+                    <form target="_blank" action="https://formsubmit.co/gustavodavid04@gmail.com" method="POST"
+                        id="botonmail">
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col">
                                     <input type="text" name="name" class="form-control"
-                                        value="{$turno->nombre_paciente} {$turno->apellido}" required>
+                                        value="{$turno->nombre_paciente} {$turno->apellido}" required id="nombre">
                                 </div>
                                 <div class="col">
-                                    <input type="email" name="email" class="form-control"
-                                        value="maildelpaciente@ejemplo.com" placeholder="Email Address" required>
+                                    <input type="email" name="email" class="form-control" value=""
+                                        placeholder="maildelpaciente@ejemplo.com" required id="email"
+                                        onkeydown="copiar()">
+                                    <input type="hidden" name="_cc" value="" id="cc-email">
                                 </div>
                             </div>
                         </div>
@@ -30,6 +33,12 @@
                         </div>
                         <button type="submit" class="btn btn-lg btn-dark btn-block">Avisar al paciente</button>
                     </form>
+                    <script type="text/javascript">
+                        function copiar() {
+                            var email = document.getElementById("email").value;
+                            document.getElementById("cc-email").value = email;
+                        };
+                    </script>
                 </div>
             </div>
             <div class="modal-footer">
