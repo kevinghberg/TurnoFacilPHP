@@ -23,37 +23,37 @@
           <li class="nav-item active">
 
             {if isset($secretariacheck) && $username}
-              <a class="nav-link" href="portalsecretaria">HOME<span class="sr-only"></span></a>
+              <a class="nav-link" href="{$url}portalsecretaria">HOME<span class="sr-only"></span></a>
             {/if}
 
             {if isset($pacientecheck)}
-              <a class="nav-link" href="portalpaciente">HOME<span class="sr-only"></span></a>
+              <a class="nav-link" href="{$url}portalpaciente">HOME<span class="sr-only"></span></a>
             {/if}
 
             {if isset($medicocheck)}
-              <a class="nav-link" href="portalmedico">HOME<span class="sr-only"></span></a>
+              <a class="nav-link" href="{$url}portalmedico">HOME<span class="sr-only"></span></a>
             {/if}
 
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="deslogear">LOGOUT</a>
+            <a class="nav-link" href="{$url}deslogear">LOGOUT</a>
           </li>
           <li class="nav-item">
             <a class="nav-link fw-bold">{$username}</a>
           </li>
         {else}
           <li class="nav-item">
-            <a class="nav-link" href="ingreso">INGRESAR</a>
+            <a class="nav-link" href="{$url}ingreso">INGRESAR</a>
           </li>
         {/if}
         {if isset($secretaria) && ($secretaria==true)}
           <li class="nav-item">
-            <a class="nav-link" href="listarmedicos">MEDICOS</a>
+            <a class="nav-link" href="{$url}listarmedicos">MEDICOS</a>
           </li>
         {/if}
         {if isset($medico) && ($medico==true)}
           <li class="nav-item">
-            <a class="nav-link" href="listarmedicos">MIS TURNOS</a>
+            <a class="nav-link" href="{$url}listarmedicos">MIS TURNOS</a>
           </li>
         {/if}
       </ul>
@@ -61,5 +61,5 @@
   </nav>
 
   <div class="container d-flex justify-content-center">
-    <img src="imagenes\bea8c8bfd99232680106da7d20a8731c.png" class="img-fluid" alt="Responsive image">
+    <img src="./imagenes/bea8c8bfd99232680106da7d20a8731c.png" class="img-fluid" alt="">
 </div>

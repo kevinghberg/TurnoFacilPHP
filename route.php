@@ -36,10 +36,6 @@ switch ($urlParts[0]) {
     $ControllerTurnos->filtrarTurno();
     break;
 
-  case 'turnosMedico':
-    $ControllerTurnos->getTurnosMedico();
-    break;
-
   case 'ingreso':
     $ControllerPaciente->getForm();
     break;
@@ -75,10 +71,14 @@ switch ($urlParts[0]) {
   case 'turnosolicitados':
     $ControllerSecretaria->showCargarTurno();
     break;
-  
-   case 'administrarturnos':
-      $ControllerSecretaria->showAdministrarTurnos();
-      break;
+
+  case 'administrarturnos':
+    $ControllerSecretaria->showAdministrarTurnos();
+    break;
+
+  case 'panelturno':
+    $ControllerSecretaria->showPanelTurno($urlParts[1]);
+    break;
 
   case 'logear':
     $ControllerPaciente->logear();
@@ -120,4 +120,15 @@ switch ($urlParts[0]) {
     $ControllerPaciente->mostrarMedicosPorObra();
     break;
 
+  case 'bloquearturno':
+    $ControllerTurnos->bloquearTurno();
+    break;
+
+  case 'desbloquearturno':
+    $ControllerTurnos->desbloquearTurno();
+    break;
+
+  case 'bajapaciente':
+    $ControllerTurnos->darDeBajaPaciente();
+    break;
 }

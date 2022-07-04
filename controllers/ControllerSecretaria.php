@@ -67,6 +67,13 @@ class ControllerSecretaria extends Controller
     {
         $medicos = $this->modelMedico->getMedicos();
         $turnos = $this->modelTurnos->getTurnos();
-        $this->view->showAdministrarTurnos($medicos, $turnos);
+        $this->view->showAdministrarTurnos($turnos, $medicos);
     }
+
+    public function showPanelTurno($id_turno)
+    {
+        $turno = $this->modelTurnos->getTurnoPorId($id_turno);
+        $this->view->showPanelTurno($turno);
+    }
+
 }

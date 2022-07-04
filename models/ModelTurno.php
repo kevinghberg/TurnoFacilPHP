@@ -6,7 +6,7 @@ include_once "ModelDB.php";
 class ModelTurno extends ModelDB
 {
 
-   
+
     function getTurnos()
     {
         $sentencia = $this->getDB()->prepare("SELECT * 
@@ -84,5 +84,39 @@ class ModelTurno extends ModelDB
                                              WHERE m.id_secretaria=?");
         $sentencia->execute([$id]);
         return $sentencia->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    function getTurnoPorId($id)
+    {
+        $sentencia = $this->getDb()->prepare("SELECT *
+                                              FROM turno t
+                                              LEFT JOIN medico m ON t.id_medico = m.id_medico
+                                              LEFT JOIN paciente p ON t.dni_paciente = p.dni_paciente
+                                              WHERE t.id_turno = ?");
+        $sentencia->execute([$id]);
+        return $sentencia->fetch(PDO::FETCH_OBJ);
+    }
+
+    function bloquearTurno($id_turno)
+    {
+        $query = $this->getDb()->prepare("
+        UPDATE turno SET disponible = 0 WHERE id_turno = ?");
+        $query->execute(([$id_turno]));
+        return $query->fetch(PDO::FETCH_OBJ);
+    }
+
+    function desbloquearTurno($id_turno)
+    {
+        $query = $this->getDb()->prepare("
+        UPDATE turno SET disponible = 1 WHERE id_turno = ?");
+        $query->execute(([$id_turno]));
+        return $query->fetch(PDO::FETCH_OBJ);
+    }
+    function darDeBajaPaciente($id_turno)
+    {
+        $query = $this->getDb()->prepare("
+        UPDATE turno SET dni_paciente = NULL WHERE id_turno = ?");
+        $query->execute(([$id_turno]));
+        return $query->fetch(PDO::FETCH_OBJ);
     }
 }

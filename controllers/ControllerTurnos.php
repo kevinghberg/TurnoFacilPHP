@@ -23,7 +23,7 @@ class ControllerTurnos extends Controller
         $this->viewPaciente = new PacienteView();
     }
 
-    
+
     function getTurnos()
     {
 
@@ -69,7 +69,23 @@ class ControllerTurnos extends Controller
         $this->viewPaciente->showTurnosPaciente($turnosPaciente);
     }
 
-    function getTurnosMedico()
+    function bloquearTurno()
     {
+        $id_turno = $_POST["id_turno"];
+        $this->modelTurno->bloquearTurno($id_turno);
+        header("Location:" . BASE_URL . 'panelturno/' . $id_turno);
+    }
+
+    function desbloquearTurno()
+    {
+        $id_turno = $_POST["id_turno"];
+        $this->modelTurno->desbloquearTurno($id_turno);
+        header("Location:" . BASE_URL . 'panelturno/' . $id_turno);
+    }
+    function darDeBajaPaciente()
+    {
+        $id_turno = $_POST["id_turno"];
+        $this->modelTurno->darDeBajaPaciente($id_turno);
+        header("Location:" . BASE_URL . 'panelturno/' . $id_turno);
     }
 }

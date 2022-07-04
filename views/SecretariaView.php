@@ -20,7 +20,7 @@ class SecretariaView extends View
     public function showCargarTurno($turnos)
     {
         $this->getSmarty()->assign('turnos', $turnos);
-        $this->getSmarty()->display("templates/cargarTurno.tpl");
+        $this->getSmarty()->display("templates/confirmarturno.tpl");
     }
 
     public function showAdministrarTurnos($turnos,$medicos)
@@ -30,6 +30,10 @@ class SecretariaView extends View
         $this->getSmarty()->display("templates/administrarturnos.tpl");
     }
 
+    public function showPanelTurno($turno){
+        $this->getSmarty()->assign('turno',$turno);
+        $this->getSmarty()->display("templates/panelturno.tpl");
+    }
 
     
 }
