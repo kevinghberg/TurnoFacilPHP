@@ -89,7 +89,7 @@ class ModelMedico extends ModelDB
     }
 
     public function getMedicosPorSecretaria($id_secretaria){
-        $query = $this->getDb()->prepare('SELECT * FROM MEDICO WHERE id_secretaria = ?');
+        $query = $this->getDb()->prepare('SELECT * FROM medico WHERE id_secretaria = ?');
         $query->execute([$id_secretaria]);
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
