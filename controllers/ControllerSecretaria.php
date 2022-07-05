@@ -44,6 +44,14 @@ class ControllerSecretaria extends Controller
         $this->view->showPortalSecretaria();
     }
 
+    public function showMisMedicos(){
+        $username = AuthHelper::getLoggedUserName();
+        $id = $this->model->getId($username);
+        $id = intval($id->id_secretaria);
+        $medicos = $this->modelMedico->getMedicosPorSecretaria($id);
+        $this->view->showMisMedicos($medicos);
+    }
+
     //funcion para cargarle un turno a un medico y confirmarselo al paciente
     public function cargarTurno($id_turno, $id_medico)
     {
