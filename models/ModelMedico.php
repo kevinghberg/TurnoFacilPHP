@@ -38,7 +38,7 @@ class ModelMedico extends ModelDB
         return $sentencia->fetchAll(PDO::FETCH_OBJ);
     }
 
-    function getMedicoPorUsername($medico)
+    function getMedicoPorId($medico)
     {
         $sentencia = $this->getDb()->prepare("SELECT * FROM medico WHERE id_medico = ?");
         $sentencia->execute([$medico]);
