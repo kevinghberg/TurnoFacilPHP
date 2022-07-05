@@ -31,8 +31,5 @@ class MedicoView extends View
         $this->getSmarty()->display('templates/cronograma.tpl');
     }
 
-    public function showModificarMedico($medico){
-        $this->getSmarty()->assign('medico', $medico);
-        $this->getSmarty()->display('templates/modificarmedico.tpl');
-    }
+    
 }

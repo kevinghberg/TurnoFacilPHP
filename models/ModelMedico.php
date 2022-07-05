@@ -40,7 +40,10 @@ class ModelMedico extends ModelDB
 
     function getMedicoPorId($medico)
     {
-        $sentencia = $this->getDb()->prepare("SELECT * FROM medico WHERE id_medico = ?");
+        $sentencia = $this->getDb()->prepare("SELECT *, s.username AS nombre_secretaria
+                                              FROM medico m
+                                              JOIN secretaria s ON m.id_secretaria = s.id_secretaria
+                                              WHERE id_medico = ?");
         $sentencia->execute([$medico]);
         return $sentencia->fetch(PDO::FETCH_OBJ);
     }
@@ -88,15 +91,17 @@ class ModelMedico extends ModelDB
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function getMedicosPorSecretaria($id_secretaria){
+    public function getMedicosPorSecretaria($id_secretaria)
+    {
         $query = $this->getDb()->prepare('SELECT * FROM medico WHERE id_secretaria = ?');
         $query->execute([$id_secretaria]);
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function modificarMedico($nombre,$especialidad,$secretaria){
-        $sentencia = $this->getDB()->prepare("UPDATE medico SET nombre_medico=?,especialidad=?,id_secretaria=? WHERE id=?");
-        $sentencia->execute([$modelo,$talle,$marca,$destino,$id]);
+    public function modificarMedico($nombre, $especialidad, $secretaria, $id)
+    {
+        $sentencia = $this->getDB()->prepare("UPDATE medico SET nombre_medico=?,especialidad=?,id_secretaria=? WHERE id_medico=?");
+        $sentencia->execute([$nombre, $especialidad, $secretaria, $id]);
         return $sentencia->fetch(PDO::FETCH_OBJ);
     }
 }

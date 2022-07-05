@@ -145,10 +145,11 @@ switch ($urlParts[0]) {
     break;
 
   case 'modificarmedico':
-    $ControllerMedico->modificarMedico();
+    $ControllerSecretaria->modificarMedico();
     break;
 
-  case 'showmodificarmedico'($urlParts[1]):
-    $ControllerMedico->showModificarMedico();
+  case 'showmodificarmedico':
+    $ControllerSecretaria->showModificarMedico($urlParts[1]);
     break;
+
 }

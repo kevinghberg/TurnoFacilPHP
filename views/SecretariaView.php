@@ -42,9 +42,9 @@ class SecretariaView extends View
         $this->getSmarty()->display("templates/mismedicos.tpl");
     }
 
-    public function showPanelInfoMedico($medico)
+    public function showModificarMedico($medico)
     {
         $this->getSmarty()->assign('medico', $medico);
-        $this->getSmarty()->display('templates/panelinfomedico');
+        $this->getSmarty()->display("templates/modificarmedico.tpl");
     }
 }

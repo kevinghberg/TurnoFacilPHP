@@ -44,7 +44,8 @@ class ControllerSecretaria extends Controller
         $this->view->showPortalSecretaria();
     }
 
-    public function showMisMedicos(){
+    public function showMisMedicos()
+    {
         $username = AuthHelper::getLoggedUserName();
         $id = $this->model->getId($username);
         $id = intval($id->id_secretaria);
@@ -52,7 +53,8 @@ class ControllerSecretaria extends Controller
         $this->view->showMisMedicos($medicos);
     }
 
-    public function showInformacionMedico($id_medico){
+    public function showInformacionMedico($id_medico)
+    {
         $medico = $this->modelMedico->getMedicoPorId($id_medico);
         $this->view->showInfoMedico($medico);
     }
@@ -89,4 +91,20 @@ class ControllerSecretaria extends Controller
         $this->view->showPanelTurno($turno);
     }
 
+    public function modificarMedico()
+    {
+        $nombre = $_POST['inputNombreMedico'];
+        $especialidad = $_POST['inputEspecialidadMedico'];
+        $secretaria = $_POST['inputSecretariaMedico'];
+        $id_medico = $_POST['inputIdMedico'];
+
+        $this->model->modificarMedico($nombre, $especialidad, $secretaria, $id_medico); //agregar id
+        header("Location:" . BASE_URL . 'mismedicos');
+    }
+
+    public function showModificarMedico($id)
+    {
+        $medico = $this->modelMedico->getMedicoPorId($id);
+        $this->view->showModificarMedico($medico);
+    }
 }
