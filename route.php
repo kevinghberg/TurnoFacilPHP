@@ -76,6 +76,10 @@ switch ($urlParts[0]) {
     $ControllerSecretaria->showAdministrarTurnos();
     break;
 
+  case 'mismedicos':
+    $ControllerSecretaria->showMisMedicos();
+    break;
+
   case 'panelturno':
     $ControllerSecretaria->showPanelTurno($urlParts[1]);
     break;
