@@ -17,7 +17,7 @@
     style="width: 850px ; height: 500px;">
 
    
-    <form action="modificarmedico" method="POST">
+    <form action="{$url}modificarmedico" method="POST">
 
     <input type="text" name="inputNombreMedico" class="shadow p-1  mx-1 my-1 bg-white rounded" value="{$medico->nombre_medico}">
     
@@ -25,7 +25,7 @@
 
     <input type="text" name="inputSecretariaMedico" class="shadow p-1  mx-1 my-1 bg-white rounded" value="{$medico->id_secretaria}">
 
-    <input type="hidden" name="inputMedicoId" value="{$medico->id_medico}">
+    <input type="hidden" name="inputIdMedico" value="{$medico->id_medico}">
 
     <button type="submit"> MODIFICAR </button>
 

@@ -98,10 +98,5 @@ class ModelMedico extends ModelDB
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function modificarMedico($nombre, $especialidad, $secretaria, $id)
-    {
-        $sentencia = $this->getDB()->prepare("UPDATE medico SET nombre_medico=?,especialidad=?,id_secretaria=? WHERE id_medico=?");
-        $sentencia->execute([$nombre, $especialidad, $secretaria, $id]);
-        return $sentencia->fetch(PDO::FETCH_OBJ);
-    }
+    
 }

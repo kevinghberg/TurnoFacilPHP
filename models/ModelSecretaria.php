@@ -22,4 +22,11 @@ class ModelSecretaria extends ModelDB
         $sentencia->execute([$username]);
         return $sentencia->fetch(PDO::PARAM_BOOL);
     }
+
+    public function modificarMedico($nombre, $especialidad, $secretaria, $id)
+    {
+        $sentencia = $this->getDB()->prepare("UPDATE medico SET nombre_medico=?,especialidad=?,id_secretaria=? WHERE id_medico=?");
+        $sentencia->execute([$nombre, $especialidad, $secretaria, $id]);
+        return $sentencia->fetch(PDO::FETCH_OBJ);
+    }
 }
