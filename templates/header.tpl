@@ -42,16 +42,6 @@
             <a class="nav-link" href="{$url}ingreso">INGRESAR</a>
           </li>
         {/if}
-        {if isset($secretariacheck)}
-          <li class="nav-item">
-            <a class="nav-link" href="{$url}listarmedicos">MEDICOS</a>
-          </li>
-        {/if}
-        {if isset($medicocheck)}
-          <li class="nav-item">
-            <a class="nav-link" href="{$url}listarmedicos">MIS TURNOS</a>
-          </li>
-        {/if}
         {if isset($username) && $username}
           <li class="nav-item">
             <a class="nav-link" href="{$url}deslogear">LOGOUT</a>
