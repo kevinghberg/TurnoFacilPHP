@@ -52,6 +52,11 @@ class ControllerSecretaria extends Controller
         $this->view->showMisMedicos($medicos);
     }
 
+    public function showInformacionMedico($id_medico){
+        $medico = $this->modelMedico->getMedicoPorId($id_medico);
+        $this->view->showInfoMedico($medico);
+    }
+
     //funcion para cargarle un turno a un medico y confirmarselo al paciente
     public function cargarTurno($id_turno, $id_medico)
     {

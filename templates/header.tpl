@@ -42,12 +42,12 @@
             <a class="nav-link" href="{$url}ingreso">INGRESAR</a>
           </li>
         {/if}
-        {if isset($secretaria) && ($secretaria==true)}
+        {if isset($secretariacheck)}
           <li class="nav-item">
             <a class="nav-link" href="{$url}listarmedicos">MEDICOS</a>
           </li>
         {/if}
-        {if isset($medico) && ($medico==true)}
+        {if isset($medicocheck)}
           <li class="nav-item">
             <a class="nav-link" href="{$url}listarmedicos">MIS TURNOS</a>
           </li>
