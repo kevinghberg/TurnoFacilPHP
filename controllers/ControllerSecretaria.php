@@ -99,7 +99,7 @@ class ControllerSecretaria extends Controller
         $id_medico = $_POST['inputIdMedico'];
 
         $this->model->modificarMedico($nombre, $especialidad, $secretaria, $id_medico);
-        
+        header("Location:" . BASE_URL . 'mismedicos');
     }
 
     public function showModificarMedico($id)

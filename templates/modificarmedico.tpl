@@ -18,7 +18,7 @@ style="width: 850px ; height: 500px;">
     <div class="d-flex justify-content-end align-items-center " style="width: 850px ; height: 500px;">
 
 
-        <form action="modificarmedico" method="POST">
+        <form action="{$url}modificarmedico" method="POST">
 
             <li class="list-group-item">
                 <input type="text" name="inputNombreMedico" class="shadow p-1  mx-1 my-1 bg-white rounded"
@@ -33,7 +33,7 @@ style="width: 850px ; height: 500px;">
                     value=" ">
             </li>
             <li class="list-group-item">
-                <input type="hidden" name="inputMedicoId" value="{$medico->id_medico}">
+                <input type="hidden" name="inputIdMedico" value="{$medico->id_medico}">
             </li>
             <li class="list-group-item d-flex justify-content-center">
                 <button type="submit" class="btns"> MODIFICAR </button>
