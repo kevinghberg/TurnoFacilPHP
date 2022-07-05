@@ -35,4 +35,5 @@ Por ejemplo: MYS-60
 | MYS-96| 1/7/2022 | Kevin | Ver lista de turnos de un determinado medico | Muestra lista de turnos venideros segun el medico en sesion | No |
 | MYS-103 | 4/7/2022 | Flavia |Tener un botón para ir a los turnos reservados, que se listen los mismos. Dar la opción de cancelar turno y que se de de baja de la base de datos| Hay un botón para los turnos reservados, se listan los mismos, se puede cancelar tueno y se da de baja de la base de datos | No | 
 | MYS-96 | 4/7/2022 | Gustavo | Dar la posibilidad de guardar como PDF | Descarga un archivo PDF con la tabla pedida | No |
+| MYS-134 | 4/7/2022 | Gustavo | Pagina funcionando | Problema con la carga de imagenes (logo y foto del medico) | Si |
 </details>
