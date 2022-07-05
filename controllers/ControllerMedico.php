@@ -39,4 +39,22 @@ class ControllerMedico extends Controller
         $turnos = $this->model->getTurnosMedico($_SESSION['USERNAME']);
         $this->view->showCronograma($turnos);
     }
+
+    public function modificarMedico(){
+
+       
+
+        $nombre = $_POST['inputNombreMedico'];
+        $especialidad = $_POST['inputEspecialidadMedico'];
+        $secretaria = $_POST['inputSecretariaMedico'];
+        //$id = ($urlParts[1]);
+
+        $this->model->modificarMedico($nombre,$especialidad,$secretaria);//agregar id
+
+    }
+
+    public function showModificarMedico($id){
+        $medico = $this->model->getMedicoPorId($id);
+        $this->view->showModificarMedico($medico);
+    }
 }

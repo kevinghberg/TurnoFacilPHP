@@ -143,4 +143,12 @@ switch ($urlParts[0]) {
   case 'agregarturno':
     $ControllerTurnos->agregarTurnoNuevo();
     break;
+
+  case 'modificarmedico':
+    $ControllerMedico->modificarMedico();
+    break;
+
+  case 'showmodificarmedico'($urlParts[1]):
+    $ControllerMedico->showModificarMedico();
+    break;
 }
